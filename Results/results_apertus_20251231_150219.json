@@ -1,0 +1,81 @@
+{
+  "ground_truth_numeric": {
+    "description": "Named concepts vs Numeric values - Structural calibration",
+    "n_pairs": 30,
+    "uniformity_a": 0.6368193030357361,
+    "uniformity_b": 0.5397745966911316,
+    "asymmetry": 0.09704470634460449,
+    "pair_similarity_mean": 0.6777066764732201
+  },
+  "ground_truth_nonnumeric": {
+    "description": "Factual equivalences without numeric values",
+    "n_pairs": 20,
+    "uniformity_a": 0.8370084166526794,
+    "uniformity_b": 0.7284901142120361,
+    "asymmetry": 0.10851830244064331,
+    "pair_similarity_mean": 0.8686783850193024
+  },
+  "tech_philosophy": {
+    "description": "Software development philosophy debates",
+    "n_pairs": 50,
+    "uniformity_a": 0.7585451006889343,
+    "uniformity_b": 0.7223699688911438,
+    "asymmetry": 0.03617513179779053,
+    "pair_similarity_mean": 0.8354530429840088
+  },
+  "lifestyle": {
+    "description": "Personal lifestyle preferences with no normative weight",
+    "n_pairs": 50,
+    "uniformity_a": 0.7175660729408264,
+    "uniformity_b": 0.6814455389976501,
+    "asymmetry": 0.03612053394317627,
+    "pair_similarity_mean": 0.8003619469702243
+  },
+  "business": {
+    "description": "Organizational strategy and management approaches",
+    "n_pairs": 50,
+    "uniformity_a": 0.7036895155906677,
+    "uniformity_b": 0.6841133236885071,
+    "asymmetry": 0.019576191902160645,
+    "pair_similarity_mean": 0.7230678776092827
+  },
+  "scientific_facts": {
+    "description": "Scientific concepts with different framings",
+    "n_pairs": 30,
+    "uniformity_a": 0.7465658783912659,
+    "uniformity_b": 0.6375685334205627,
+    "asymmetry": 0.10899734497070312,
+    "pair_similarity_mean": 0.6547006905078888
+  },
+  "_global_stats": {
+    "total_pairs": 230,
+    "n_bootstrap": 10000,
+    "all_categories": {
+      "mean_asymmetry": 0.06773870189984639,
+      "std_asymmetry": 0.03772640149071619,
+      "bootstrap_95ci": [
+        0.038020590941111244,
+        0.09486820300420125
+      ],
+      "cohens_d": 1.7955251241484875
+    },
+    "neutral_only": {
+      "mean_asymmetry": 0.06187750101089477,
+      "std_asymmetry": 0.03875326551611582,
+      "bootstrap_95ci": [
+        0.02951371669769287,
+        0.0943261742591858
+      ],
+      "cohens_d": 1.5967041751744033
+    }
+  },
+  "_metadata": {
+    "model": "apertus",
+    "model_display": "Apertus-8B",
+    "model_hf_name": "swiss-ai/Apertus-8B-2509",
+    "timestamp": "2025-12-31T15:02:19.719886",
+    "n_bootstrap": 10000,
+    "random_seed": 42,
+    "version": "1.0.0"
+  }
+}

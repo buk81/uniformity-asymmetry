@@ -1,0 +1,81 @@
+{
+  "ground_truth_numeric": {
+    "description": "Named concepts vs Numeric values - Structural calibration",
+    "n_pairs": 30,
+    "uniformity_a": 0.43440860509872437,
+    "uniformity_b": 0.6354861259460449,
+    "asymmetry": -0.20107752084732056,
+    "pair_similarity_mean": 0.4398495192329089
+  },
+  "ground_truth_nonnumeric": {
+    "description": "Factual equivalences without numeric values",
+    "n_pairs": 20,
+    "uniformity_a": 0.5126374363899231,
+    "uniformity_b": 0.480477511882782,
+    "asymmetry": 0.03215992450714111,
+    "pair_similarity_mean": 0.7150778084993362
+  },
+  "tech_philosophy": {
+    "description": "Software development philosophy debates",
+    "n_pairs": 50,
+    "uniformity_a": 0.56300288438797,
+    "uniformity_b": 0.5946884751319885,
+    "asymmetry": -0.031685590744018555,
+    "pair_similarity_mean": 0.6861280316114425
+  },
+  "lifestyle": {
+    "description": "Personal lifestyle preferences with no normative weight",
+    "n_pairs": 50,
+    "uniformity_a": 0.5811594724655151,
+    "uniformity_b": 0.5933408737182617,
+    "asymmetry": -0.012181401252746582,
+    "pair_similarity_mean": 0.7480600607395173
+  },
+  "business": {
+    "description": "Organizational strategy and management approaches",
+    "n_pairs": 50,
+    "uniformity_a": 0.7069363594055176,
+    "uniformity_b": 0.6661992073059082,
+    "asymmetry": 0.040737152099609375,
+    "pair_similarity_mean": 0.732408777475357
+  },
+  "scientific_facts": {
+    "description": "Scientific concepts with different framings",
+    "n_pairs": 30,
+    "uniformity_a": 0.5167862176895142,
+    "uniformity_b": 0.506328821182251,
+    "asymmetry": 0.010457396507263184,
+    "pair_similarity_mean": 0.6869672993818919
+  },
+  "_global_stats": {
+    "total_pairs": 230,
+    "n_bootstrap": 10000,
+    "all_categories": {
+      "mean_asymmetry": -0.026931673288345337,
+      "std_asymmetry": 0.08168616353451308,
+      "bootstrap_95ci": [
+        -0.10106040040651958,
+        0.024011691411336262
+      ],
+      "cohens_d": -0.32969687998625125
+    },
+    "neutral_only": {
+      "mean_asymmetry": 0.007897496223449707,
+      "std_asymmetry": 0.02699497883489699,
+      "bootstrap_95ci": [
+        -0.015455317497253419,
+        0.03125030994415283
+      ],
+      "cohens_d": 0.29255426509114413
+    }
+  },
+  "_metadata": {
+    "model": "mistral",
+    "model_display": "Mistral-7B-v0.1",
+    "model_hf_name": "mistralai/Mistral-7B-v0.1",
+    "timestamp": "2025-12-31T14:37:00.549701",
+    "n_bootstrap": 10000,
+    "random_seed": 42,
+    "version": "1.0.0"
+  }
+}

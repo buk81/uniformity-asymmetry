@@ -1,0 +1,81 @@
+{
+  "ground_truth_numeric": {
+    "description": "Named concepts vs Numeric values - Structural calibration",
+    "n_pairs": 30,
+    "uniformity_a": 0.4857427179813385,
+    "uniformity_b": 0.6274814009666443,
+    "asymmetry": -0.1417386829853058,
+    "pair_similarity_mean": 0.5171810170014699
+  },
+  "ground_truth_nonnumeric": {
+    "description": "Factual equivalences without numeric values",
+    "n_pairs": 20,
+    "uniformity_a": 0.5018086433410645,
+    "uniformity_b": 0.49091699719429016,
+    "asymmetry": 0.010891646146774292,
+    "pair_similarity_mean": 0.7435824930667877
+  },
+  "tech_philosophy": {
+    "description": "Software development philosophy debates",
+    "n_pairs": 50,
+    "uniformity_a": 0.5694900751113892,
+    "uniformity_b": 0.5776059627532959,
+    "asymmetry": -0.008115887641906738,
+    "pair_similarity_mean": 0.7006651401519776
+  },
+  "lifestyle": {
+    "description": "Personal lifestyle preferences with no normative weight",
+    "n_pairs": 50,
+    "uniformity_a": 0.5304714441299438,
+    "uniformity_b": 0.5383238792419434,
+    "asymmetry": -0.007852435111999512,
+    "pair_similarity_mean": 0.7327522456645965
+  },
+  "business": {
+    "description": "Organizational strategy and management approaches",
+    "n_pairs": 50,
+    "uniformity_a": 0.6706298589706421,
+    "uniformity_b": 0.6447979211807251,
+    "asymmetry": 0.025831937789916992,
+    "pair_similarity_mean": 0.7042349708080292
+  },
+  "scientific_facts": {
+    "description": "Scientific concepts with different framings",
+    "n_pairs": 30,
+    "uniformity_a": 0.5368189811706543,
+    "uniformity_b": 0.5493685007095337,
+    "asymmetry": -0.012549519538879395,
+    "pair_similarity_mean": 0.718104769786199
+  },
+  "_global_stats": {
+    "total_pairs": 230,
+    "n_bootstrap": 10000,
+    "all_categories": {
+      "mean_asymmetry": -0.022255490223566692,
+      "std_asymmetry": 0.055058981949195465,
+      "bootstrap_95ci": [
+        -0.07175936301549275,
+        0.010257681210835775
+      ],
+      "cohens_d": -0.40421179969657456
+    },
+    "neutral_only": {
+      "mean_asymmetry": 0.001641148328781128,
+      "std_asymmetry": 0.014542825974646827,
+      "bootstrap_95ci": [
+        -0.009836649894714356,
+        0.015167587995529174
+      ],
+      "cohens_d": 0.11284934031097414
+    }
+  },
+  "_metadata": {
+    "model": "llama",
+    "model_display": "Llama-3.1-8B",
+    "model_hf_name": "meta-llama/Llama-3.1-8B",
+    "timestamp": "2025-12-31T14:27:05.077298",
+    "n_bootstrap": 10000,
+    "random_seed": 42,
+    "version": "1.0.0"
+  }
+}

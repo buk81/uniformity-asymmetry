@@ -1,0 +1,81 @@
+{
+  "ground_truth_numeric": {
+    "description": "Named concepts vs Numeric values - Structural calibration",
+    "n_pairs": 30,
+    "uniformity_a": 0.33747756481170654,
+    "uniformity_b": 0.5883908867835999,
+    "asymmetry": -0.2509133219718933,
+    "pair_similarity_mean": 0.3805886020263036
+  },
+  "ground_truth_nonnumeric": {
+    "description": "Factual equivalences without numeric values",
+    "n_pairs": 20,
+    "uniformity_a": 0.441609263420105,
+    "uniformity_b": 0.4051865041255951,
+    "asymmetry": 0.03642275929450989,
+    "pair_similarity_mean": 0.6828900784254074
+  },
+  "tech_philosophy": {
+    "description": "Software development philosophy debates",
+    "n_pairs": 50,
+    "uniformity_a": 0.4881346523761749,
+    "uniformity_b": 0.4811670780181885,
+    "asymmetry": 0.00696757435798645,
+    "pair_similarity_mean": 0.642593092918396
+  },
+  "lifestyle": {
+    "description": "Personal lifestyle preferences with no normative weight",
+    "n_pairs": 50,
+    "uniformity_a": 0.46363040804862976,
+    "uniformity_b": 0.44300082325935364,
+    "asymmetry": 0.020629584789276123,
+    "pair_similarity_mean": 0.6679526579380035
+  },
+  "business": {
+    "description": "Organizational strategy and management approaches",
+    "n_pairs": 50,
+    "uniformity_a": 0.5490939021110535,
+    "uniformity_b": 0.5244388580322266,
+    "asymmetry": 0.024655044078826904,
+    "pair_similarity_mean": 0.5983107340335846
+  },
+  "scientific_facts": {
+    "description": "Scientific concepts with different framings",
+    "n_pairs": 30,
+    "uniformity_a": 0.48044097423553467,
+    "uniformity_b": 0.4589613676071167,
+    "asymmetry": 0.02147960662841797,
+    "pair_similarity_mean": 0.6649672011534373
+  },
+  "_global_stats": {
+    "total_pairs": 230,
+    "n_bootstrap": 10000,
+    "all_categories": {
+      "mean_asymmetry": -0.023459792137145996,
+      "std_asymmetry": 0.10208273851419143,
+      "bootstrap_95ci": [
+        -0.11660629014174144,
+        0.027377466360727947
+      ],
+      "cohens_d": -0.22981154753115765
+    },
+    "neutral_only": {
+      "mean_asymmetry": 0.022030913829803468,
+      "std_asymmetry": 0.009414702695222574,
+      "bootstrap_95ci": [
+        0.013407474756240845,
+        0.03027549386024475
+      ],
+      "cohens_d": 2.340054095067441
+    }
+  },
+  "_metadata": {
+    "model": "gemma",
+    "model_display": "Gemma-2-9B",
+    "model_hf_name": "google/gemma-2-9b",
+    "timestamp": "2025-12-31T14:24:25.842453",
+    "n_bootstrap": 10000,
+    "random_seed": 42,
+    "version": "1.0.0"
+  }
+}
