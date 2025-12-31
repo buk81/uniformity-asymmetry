@@ -1,5 +1,6 @@
 # Uniformity Asymmetry: An Exploratory Metric for Detecting Representational Preferences in LLM Embeddings
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14610161.svg)](https://doi.org/10.5281/zenodo.14610161)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buk81/uniformity-asymmetry/blob/main/Uniformity_Asymmetry_Validation.ipynb)
 
 **Author:** Davide D'Elia
@@ -120,10 +121,15 @@ python uniformity_asymmetry_clean.py --model apertus
 ## Citation
 
 ```bibtex
-@article{delia2025uniformity,
-  title={Uniformity Asymmetry: An Exploratory Metric for Detecting Representational Preferences in LLM Embeddings},
-  author={D'Elia, Davide},
-  year={2025}
+@dataset{delia2025uniformity,
+  author       = {D'Elia, Davide},
+  title        = {{Uniformity Asymmetry: An Exploratory Metric for
+                   Detecting Representational Preferences in LLM
+                   Embeddings -- Code and Dataset}},
+  year         = 2025,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.14610161},
+  url          = {https://doi.org/10.5281/zenodo.14610161}
 }
 ```
 
