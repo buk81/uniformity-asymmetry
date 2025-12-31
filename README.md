@@ -35,8 +35,8 @@ uniformity-asymmetry/
 ├── requirements.txt                       # Python dependencies
 ├── LICENSE                                # MIT License
 ├── .gitignore                             # Git ignore rules
-├── uniformity_asymmetry_FINAL_*.tar.gz    # Archive (paper + code + data)
-└── uniformity_asymmetry_FINAL_*.tar.gz.ots # Bitcoin timestamp proof
+├── uniformity_asymmetry_WITH_DOI_*.tar.gz    # Archive (paper + code + data + DOI)
+└── uniformity_asymmetry_WITH_DOI_*.tar.gz.ots # Bitcoin timestamp proof
 ```
 
 ## Quick Start (Google Colab)
@@ -142,13 +142,13 @@ MIT License
 This research is timestamped on the Bitcoin blockchain via [OpenTimestamps](https://opentimestamps.org/):
 
 ```
-uniformity_asymmetry_FINAL_20251231_181623.tar.gz.ots
+uniformity_asymmetry_WITH_DOI_20251231_183813.tar.gz.ots
 ```
 
 **Verify:**
 ```bash
 pip install opentimestamps-client
-ots verify uniformity_asymmetry_FINAL_20251231_181623.tar.gz.ots
+ots verify uniformity_asymmetry_WITH_DOI_20251231_183813.tar.gz.ots
 ```
 
 The archive contains: paper source, code, dataset, and results—cryptographically proving existence as of 2025-12-31.
