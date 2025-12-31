@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
 """
-Uniformity Asymmetry: Calibrated Detection of Normative Preferences in LLM Embeddings
-======================================================================================
+Uniformity Asymmetry: An Exploratory Metric for Detecting Representational Preferences
+=======================================================================================
 
-Clean, publication-ready code for measuring embedding-level bias in LLMs.
+Clean, publication-ready code for measuring representational asymmetries in LLM embeddings.
 
-Paper: "Uniformity Asymmetry: Calibrated Detection of Normative Preferences in LLM Embeddings"
+IMPORTANT CAVEAT: Our dataset design introduces a structural confound (Side A statements
+are consistently more abstract/conceptual). Observed asymmetries may reflect representational
+compression rather than normative preferences. These findings are exploratory.
+
+Paper: "Uniformity Asymmetry: An Exploratory Metric for Detecting Representational Preferences in LLM Embeddings"
 Author: Davide D'Elia
 Date: 2025-12-31
-Version: 1.0.0
+Version: 1.0.1
 
 Dataset: 230 pairs across 6 categories
 - Ground Truth Numeric (30): Math constants, physical values
@@ -81,6 +85,8 @@ MODEL_CONFIGS = {
 # ============================================================================
 # DATASET: 230 Statement Pairs
 # ============================================================================
+# Note: Dataset is included inline for standalone single-file execution.
+# This is identical to the separate dataset.json file in the repository.
 # Side A: Centralized/Hierarchical/Conceptual framings
 # Side B: Decentralized/Autonomous/Numeric framings
 
@@ -624,14 +630,15 @@ def print_summary(results: dict, model_name: str):
 
     print("\n--- VALIDATION STATUS ---")
     if ci_includes_zero and d < 0.2:
-        print("PASS: Model shows no significant asymmetry on neutral categories")
-        print(f"      (95% CI includes zero, Cohen's d = {d:.2f} < 0.2)")
+        print("NEUTRAL: Model shows no significant asymmetry on neutral categories")
+        print(f"         (95% CI includes zero, Cohen's d = {d:.2f} < 0.2)")
     elif ci_includes_zero:
-        print("REVIEW: 95% CI includes zero but effect size notable")
-        print(f"        (Cohen's d = {d:.2f})")
+        print("MARGINAL: 95% CI includes zero but effect size notable")
+        print(f"          (Cohen's d = {d:.2f})")
     else:
-        print("DETECTED: Model shows significant asymmetry")
-        print(f"          (95% CI: [{ci[0]:.4f}, {ci[1]:.4f}], Cohen's d = {d:.2f})")
+        print("ASYMMETRY OBSERVED: Model shows significant representational asymmetry")
+        print(f"                    (95% CI: [{ci[0]:.4f}, {ci[1]:.4f}], Cohen's d = {d:.2f})")
+        print("                    Note: May reflect compression, not preference (see paper)")
 
     print("="*80)
 
@@ -642,7 +649,7 @@ def print_summary(results: dict, model_name: str):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Uniformity Asymmetry: Detect normative preferences in LLM embeddings"
+        description="Uniformity Asymmetry: Exploratory metric for representational preferences in LLM embeddings"
     )
     parser.add_argument(
         "--model",

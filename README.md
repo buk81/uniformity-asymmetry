@@ -1,4 +1,6 @@
-# Uniformity Asymmetry: Calibrated Detection of Normative Preferences in LLM Embeddings
+# Uniformity Asymmetry: An Exploratory Metric for Detecting Representational Preferences in LLM Embeddings
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buk81/uniformity-asymmetry/blob/main/Uniformity_Asymmetry_Validation.ipynb)
 
 **Author:** Davide D'Elia
 **Date:** 2025-12-31
@@ -8,25 +10,32 @@
 
 ## Overview
 
-This repository contains the code and dataset for the paper "Uniformity Asymmetry: Calibrated Detection of Normative Preferences in LLM Embeddings".
+This repository contains the code and dataset for the paper "Uniformity Asymmetry: An Exploratory Metric for Detecting Representational Preferences in LLM Embeddings".
 
-**Uniformity Asymmetry** is a calibrated metric for detecting hidden normative preferences in LLM embeddings - biases that remain invisible to generation-based safety filters.
+**Uniformity Asymmetry** is an exploratory metric for detecting representational asymmetries in LLM embeddings—differences in how models cluster semantically equivalent statements with different framings.
+
+> ⚠️ **Important Caveat:** Our dataset design introduces a structural confound: Side A statements are consistently more abstract/conceptual than Side B. This limits causal interpretation. Observed asymmetries may reflect representational compression rather than normative preferences. These findings are exploratory and require validation with balanced datasets.
 
 ## Key Features
 
-- **Calibrated metric**: Converges to zero on genuinely neutral content (Lifestyle: Llama Δ = -0.008)
+- **Exploratory metric**: Detects representational asymmetries in embedding space
 - **Cross-model validation**: Tested on 4 models (Gemma, Llama, Mistral, Apertus)
-- **Publication-quality**: 10,000 bootstrap resamples for confidence intervals
+- **Publication-quality statistics**: 10,000 bootstrap resamples for confidence intervals
 - **No fine-tuning required**: Works with any decoder model
 
 ## Files
 
 ```
-github_release/
+uniformity-asymmetry/
 ├── README.md                              # This file
 ├── Uniformity_Asymmetry_Validation.ipynb  # Colab notebook (recommended)
 ├── uniformity_asymmetry_clean.py          # Standalone Python script
-└── dataset.json                           # 230 statement pairs (optional)
+├── dataset.json                           # 230 statement pairs
+├── requirements.txt                       # Python dependencies
+├── LICENSE                                # MIT License
+├── .gitignore                             # Git ignore rules
+├── uniformity_asymmetry_FINAL_*.tar.gz    # Archive (paper + code + data)
+└── uniformity_asymmetry_FINAL_*.tar.gz.ots # Bitcoin timestamp proof
 ```
 
 ## Quick Start (Google Colab)
@@ -41,9 +50,14 @@ github_release/
 
 **Expected runtime:** ~25-35 minutes per model on A100
 
+> **Note:** Free Tier Colab GPUs (T4) may be slower or run out of memory with 9B models. A100 or L4 recommended for reliable execution.
+
 ## Local Usage
 
 ```bash
+# Install dependencies
+pip install -r requirements.txt
+
 # Set your HuggingFace token
 export HF_TOKEN="your_token_here"
 
@@ -82,32 +96,32 @@ python uniformity_asymmetry_clean.py --model apertus
 - 95% CI includes zero → PASS
 - Cohen's d < 0.2 → Small effect
 
-## Results Summary (Validated with 10,000 Bootstrap Resamples)
+## Results Summary (10,000 Bootstrap Resamples)
 
 | Model | Lifestyle Δ | Scientific Δ | GT Numeric Δ | Neutral 95% CI | Status |
 |-------|-------------|--------------|--------------|----------------|--------|
-| Llama-3.1-8B | -0.008 | -0.013 | -0.142 | [-0.010, 0.015] | **PASS** |
-| Mistral-7B | -0.012 | +0.010 | -0.201 | [-0.015, 0.031] | **PASS** |
-| Gemma-2-9B | +0.021 | +0.021 | -0.251 | [0.013, 0.030] | REVIEW |
-| **Apertus-8B** | +0.036 | **+0.109** | **+0.097** | [0.030, 0.094] | **DETECTED** |
+| Llama-3.1-8B | -0.008 | -0.013 | -0.142 | [-0.010, 0.015] | Neutral |
+| Mistral-7B | -0.012 | +0.010 | -0.201 | [-0.015, 0.031] | Neutral |
+| Gemma-2-9B | +0.021 | +0.021 | -0.251 | [0.013, 0.030] | Marginal |
+| **Apertus-8B** | +0.036 | **+0.109** | **+0.097** | [0.030, 0.094] | **Asymmetry** |
 
-### Key Findings
+### Key Observations
 
-**Apertus-8B Anomaly:**
-- Shows 5-10x higher asymmetry in Scientific Facts (+0.109 vs ±0.02)
-- Inverted structural effect: prefers conceptual over numeric representations (+0.097 vs -0.14 to -0.25)
-- Suggests epistemic preference for "concepts over data points"
+**Apertus-8B Shows Distinct Pattern:**
+- Higher asymmetry in Scientific Facts (+0.109 vs ±0.02 in other models)
+- Inverted structural effect on GT Numeric (+0.097 vs -0.14 to -0.25)
+- Pattern consistent with preferring abstract/conceptual framings
 
-**Calibration:**
-- Llama and Mistral: CI includes zero, Cohen's d < 0.3 → neutral
-- Gemma: marginal positive asymmetry (CI excludes zero but small effect)
-- Apertus: clear systematic preference for Side A (hierarchical/conceptual)
+**Interpretation (requires further validation):**
+- These asymmetries may reflect representational compression (abstract concepts cluster more tightly) rather than normative preferences
+- The structural confound (Side A = more abstract) limits causal claims
+- Llama/Mistral show near-zero asymmetry on neutral categories → good calibration baseline
 
 ## Citation
 
 ```bibtex
 @article{delia2025uniformity,
-  title={Uniformity Asymmetry: Calibrated Detection of Normative Preferences in LLM Embeddings},
+  title={Uniformity Asymmetry: An Exploratory Metric for Detecting Representational Preferences in LLM Embeddings},
   author={D'Elia, Davide},
   year={2025}
 }
@@ -116,6 +130,22 @@ python uniformity_asymmetry_clean.py --model apertus
 ## License
 
 MIT License
+
+## Priority Proof (Bitcoin Timestamp)
+
+This research is timestamped on the Bitcoin blockchain via [OpenTimestamps](https://opentimestamps.org/):
+
+```
+uniformity_asymmetry_FINAL_20251231_181623.tar.gz.ots
+```
+
+**Verify:**
+```bash
+pip install opentimestamps-client
+ots verify uniformity_asymmetry_FINAL_20251231_181623.tar.gz.ots
+```
+
+The archive contains: paper source, code, dataset, and results—cryptographically proving existence as of 2025-12-31.
 
 ## Acknowledgments
 
