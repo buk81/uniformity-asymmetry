@@ -1,6 +1,6 @@
 # Uniformity Asymmetry: An Exploratory Metric for Detecting Representational Preferences in LLM Embeddings
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14610161.svg)](https://doi.org/10.5281/zenodo.14610161)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18110161.svg)](https://doi.org/10.5281/zenodo.18110161)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buk81/uniformity-asymmetry/blob/main/Uniformity_Asymmetry_Validation.ipynb)
 
 **Author:** Davide D'Elia
@@ -35,8 +35,8 @@ uniformity-asymmetry/
 ├── requirements.txt                       # Python dependencies
 ├── LICENSE                                # MIT License
 ├── .gitignore                             # Git ignore rules
-├── uniformity_asymmetry_WITH_DOI_*.tar.gz    # Archive (paper + code + data + DOI)
-└── uniformity_asymmetry_WITH_DOI_*.tar.gz.ots # Bitcoin timestamp proof
+├── uniformity_asymmetry_FINAL_DOI_*.tar.gz    # Archive (paper + code + data + DOI)
+└── uniformity_asymmetry_FINAL_DOI_*.tar.gz.ots # Bitcoin timestamp proof
 ```
 
 ## Quick Start (Google Colab)
@@ -128,8 +128,8 @@ python uniformity_asymmetry_clean.py --model apertus
                    Embeddings -- Code and Dataset}},
   year         = 2025,
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.14610161},
-  url          = {https://doi.org/10.5281/zenodo.14610161}
+  doi          = {10.5281/zenodo.18110161},
+  url          = {https://doi.org/10.5281/zenodo.18110161}
 }
 ```
 
@@ -142,13 +142,13 @@ MIT License
 This research is timestamped on the Bitcoin blockchain via [OpenTimestamps](https://opentimestamps.org/):
 
 ```
-uniformity_asymmetry_WITH_DOI_20251231_183813.tar.gz.ots
+uniformity_asymmetry_FINAL_DOI_20251231_191728.tar.gz.ots
 ```
 
 **Verify:**
 ```bash
 pip install opentimestamps-client
-ots verify uniformity_asymmetry_WITH_DOI_20251231_183813.tar.gz.ots
+ots verify uniformity_asymmetry_FINAL_DOI_20251231_191728.tar.gz.ots
 ```
 
 The archive contains: paper source, code, dataset, and results—cryptographically proving existence as of 2025-12-31.
