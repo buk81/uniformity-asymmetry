@@ -1,6 +1,7 @@
 # Uniformity Asymmetry: An Exploratory Metric for Detecting Representational Preferences in LLM Embeddings
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18110161.svg)](https://doi.org/10.5281/zenodo.18110161)
+[![DOI Extended](https://zenodo.org/badge/DOI/10.5281/zenodo.18117757.svg)](https://doi.org/10.5281/zenodo.18117757)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buk81/uniformity-asymmetry/blob/main/Uniformity_Asymmetry_Validation.ipynb)
 
 **Author:** Davide D'Elia

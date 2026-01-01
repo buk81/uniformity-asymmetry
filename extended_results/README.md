@@ -151,13 +151,18 @@ ots verify provenance/v2_findings_20260101.tar.gz.ots
 
 ## Citation
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18117757.svg)](https://doi.org/10.5281/zenodo.18117757)
+
 ```bibtex
-@misc{delia2026uniformity_extended,
-  author = {D'Elia, Davide},
-  title = {Uniformity Asymmetry: Extended Results - Output Correlation Analysis},
-  year = {2026},
-  publisher = {GitHub/Zenodo},
-  howpublished = {\url{https://github.com/buk81/uniformity-asymmetry/tree/main/extended_results}}
+@software{buk81_2026_18117757,
+  author = {buk81},
+  title = {{buk81/uniformity-asymmetry: v1.1-preliminary: Extended
+           Results - Output Correlation Analysis}},
+  year = 2026,
+  publisher = {Zenodo},
+  version = {v1.1-preliminary},
+  doi = {10.5281/zenodo.18117757},
+  url = {https://doi.org/10.5281/zenodo.18117757}
 }
 ```
 
