@@ -1,0 +1,162 @@
+{
+  "numeric_split": {
+    "gemma": {
+      "full_r": 0.9530523144279975,
+      "full_p": 0.0032543894218358283,
+      "r_without_numeric": -0.6082598902123839,
+      "p_without_numeric": 0.2763763351338878,
+      "delta_r": -1.5613122046403816,
+      "numeric_ua": -0.2509133219718933,
+      "numeric_pref": -3.6433929483095806,
+      "numeric_aligned": true
+    },
+    "llama": {
+      "full_r": 0.5175161119161766,
+      "full_p": 0.29302717182252425,
+      "r_without_numeric": -0.4861758750131908,
+      "p_without_numeric": 0.40631488248134495,
+      "delta_r": -1.0036919869293675,
+      "numeric_ua": -0.1417386829853058,
+      "numeric_pref": -0.32090956370035806,
+      "numeric_aligned": true
+    },
+    "mistral": {
+      "full_r": 0.7694109497441487,
+      "full_p": 0.07362660419867667,
+      "r_without_numeric": -0.34091255627092126,
+      "p_without_numeric": 0.574497587547224,
+      "delta_r": -1.11032350601507,
+      "numeric_ua": -0.20107752084732056,
+      "numeric_pref": -0.8975622574488322,
+      "numeric_aligned": true
+    },
+    "apertus": {
+      "full_r": -0.07047023893421323,
+      "full_p": 0.8944696211249263,
+      "r_without_numeric": 0.5867361926207058,
+      "p_without_numeric": 0.2983504245541256,
+      "delta_r": 0.657206431554919,
+      "numeric_ua": 0.09704458713531494,
+      "numeric_pref": -1.7288407246271769,
+      "numeric_aligned": false
+    }
+  },
+  "ymyl_effect": {
+    "gemma": {
+      "ymyl_categories": [
+        "scientific_facts",
+        "lifestyle"
+      ],
+      "non_ymyl_categories": [
+        "ground_truth_numeric",
+        "ground_truth_nonnumeric",
+        "business",
+        "tech_philosophy"
+      ],
+      "ymyl_mean_contribution": 0.01327480677474815,
+      "non_ymyl_mean_contribution": 0.2334238339158345,
+      "ymyl_stronger": "False"
+    },
+    "llama": {
+      "ymyl_categories": [
+        "scientific_facts",
+        "lifestyle"
+      ],
+      "non_ymyl_categories": [
+        "ground_truth_numeric",
+        "ground_truth_nonnumeric",
+        "business",
+        "tech_philosophy"
+      ],
+      "ymyl_mean_contribution": -0.007216589154512008,
+      "non_ymyl_mean_contribution": 0.012294794369184934,
+      "ymyl_stronger": "False"
+    },
+    "mistral": {
+      "ymyl_categories": [
+        "scientific_facts",
+        "lifestyle"
+      ],
+      "non_ymyl_categories": [
+        "ground_truth_numeric",
+        "ground_truth_nonnumeric",
+        "business",
+        "tech_philosophy"
+      ],
+      "ymyl_mean_contribution": 0.0038388298660464674,
+      "non_ymyl_mean_contribution": 0.04429235710187257,
+      "ymyl_stronger": "False"
+    },
+    "apertus": {
+      "ymyl_categories": [
+        "scientific_facts",
+        "lifestyle"
+      ],
+      "non_ymyl_categories": [
+        "ground_truth_numeric",
+        "ground_truth_nonnumeric",
+        "business",
+        "tech_philosophy"
+      ],
+      "ymyl_mean_contribution": 0.07204892464884793,
+      "non_ymyl_mean_contribution": -0.027076091988622486,
+      "ymyl_stronger": "True"
+    }
+  },
+  "apertus_paradox": {
+    "gemma": {
+      "ua": -0.2509133219718933,
+      "pref": -3.6433929483095806,
+      "aligned": true,
+      "pct_a": 6.666666666666667,
+      "pct_b": 93.33333333333333
+    },
+    "llama": {
+      "ua": -0.1417386829853058,
+      "pref": -0.32090956370035806,
+      "aligned": true,
+      "pct_a": 43.333333333333336,
+      "pct_b": 53.333333333333336
+    },
+    "mistral": {
+      "ua": -0.20107752084732056,
+      "pref": -0.8975622574488322,
+      "aligned": true,
+      "pct_a": 20.0,
+      "pct_b": 76.66666666666667
+    },
+    "apertus": {
+      "ua": 0.09704458713531494,
+      "pref": -1.7288407246271769,
+      "aligned": false,
+      "pct_a": 10.0,
+      "pct_b": 90.0
+    }
+  },
+  "rlhf_masking": {
+    "gemma": {
+      "ua": 0.02147960662841797,
+      "pref": 1.138056786855062,
+      "gap": -0.9232607205708823,
+      "interpretation": "WEAK"
+    },
+    "llama": {
+      "ua": -0.012549519538879395,
+      "pref": 1.165419093767802,
+      "gap": -1.039923898379008,
+      "interpretation": "MASKED (neutral emb, biased out)"
+    },
+    "mistral": {
+      "ua": 0.010457396507263184,
+      "pref": 0.9724255164464315,
+      "gap": -0.8678515513737997,
+      "interpretation": "MASKED (neutral emb, biased out)"
+    },
+    "apertus": {
+      "ua": 0.10899728536605835,
+      "pref": 1.2775618155797324,
+      "gap": -0.18758896191914887,
+      "interpretation": "ALIGNED (both biased)"
+    }
+  }
+}

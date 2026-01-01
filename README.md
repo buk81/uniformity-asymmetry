@@ -36,8 +36,31 @@ uniformity-asymmetry/
 ├── LICENSE                                # MIT License
 ├── .gitignore                             # Git ignore rules
 ├── uniformity_asymmetry_FINAL_DOI_*.tar.gz    # Archive (paper + code + data + DOI)
-└── uniformity_asymmetry_FINAL_DOI_*.tar.gz.ots # Bitcoin timestamp proof
+├── uniformity_asymmetry_FINAL_DOI_*.tar.gz.ots # Bitcoin timestamp proof
+└── extended_results/                      # ⭐ NEW: Output correlation analysis
 ```
+
+## Extended Results (v1.1)
+
+**NEW (2026-01-01):** Post-paper validation experiments testing embedding→output correlation.
+
+📁 **[extended_results/](extended_results/)** — Output Correlation Analysis
+
+### Key Findings
+
+| # | Discovery | Impact |
+|---|-----------|--------|
+| 1 | **Gemma r=0.95 is artifact** | Single category (GT-Numeric) drives entire correlation |
+| 2 | **RLHF creates "Deceptive Alignment"** | Llama: neutral embeddings, biased outputs |
+| 3 | **Multilingual inversion** | Apertus shows opposite pattern due to concept compression |
+| 4 | **Lie vs Bullshit classification** | Categories cluster by confidence × asymmetry |
+
+### Quick Links
+- [FINDINGS_SUMMARY.md](extended_results/FINDINGS_SUMMARY.md) — Executive Summary
+- [figures/](extended_results/figures/) — Visualizations
+- [data/](extended_results/data/) — Raw analysis data
+
+> These results **complement** the paper. The paper's cautious "exploratory" framing was correct.
 
 ## Quick Start (Google Colab)
 
