@@ -30,8 +30,9 @@ This folder contains validation experiments performed **after** the main paper w
 ```
 extended_results/
 │
-├── FINDINGS_SUMMARY.md          ← START HERE (Executive Summary)
-├── README.md                    ← This file
+├── FINDINGS_SUMMARY.md                    ← START HERE (Executive Summary)
+├── README.md                              ← This file
+├── Output_Correlation_Experiment.ipynb    ← Colab notebook for reproduction
 │
 ├── data/                        ← Raw data (JSON, CSV)
 │   ├── correlation_analysis.json
@@ -52,6 +53,18 @@ extended_results/
 └── methodology/                 ← Full technical details
     └── FULL_ANALYSIS.md
 ```
+
+---
+
+## Reproduction
+
+Open `Output_Correlation_Experiment.ipynb` in Google Colab to reproduce these results:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buk81/uniformity-asymmetry/blob/main/extended_results/Output_Correlation_Experiment.ipynb)
+
+**Requirements:**
+- Google Colab with A100 GPU (recommended)
+- HuggingFace token with model access
 
 ---
 
