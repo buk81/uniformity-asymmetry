@@ -1,0 +1,91 @@
+{
+  "timestamp": "2026-01-02T13:28:30.448358",
+  "model": "EleutherAI/pythia-6.9b",
+  "model_display": "Pythia-6.9B",
+  "n_categories": 6,
+  "n_bootstrap": 10000,
+  "ci_level": 0.95,
+  "layer_results": {
+    "0": {
+      "r": -0.6012808953704523,
+      "ci_lower": -0.9992055568031826,
+      "ci_upper": 0.9534736983003403,
+      "p_value": 0.20677181811879888,
+      "includes_zero": true
+    },
+    "4": {
+      "r": -0.8107509344146153,
+      "ci_lower": -0.9983745460885196,
+      "ci_upper": 0.7454557855281836,
+      "p_value": 0.05033381583547907,
+      "includes_zero": true
+    },
+    "8": {
+      "r": 0.47104451389195895,
+      "ci_lower": -0.929145392766989,
+      "ci_upper": 0.9632540136351646,
+      "p_value": 0.34569159857148496,
+      "includes_zero": true
+    },
+    "12": {
+      "r": 0.21338132250270941,
+      "ci_lower": -0.986322886706813,
+      "ci_upper": 0.9134694124701148,
+      "p_value": 0.6847858115620863,
+      "includes_zero": true
+    },
+    "16": {
+      "r": -0.2454759264817754,
+      "ci_lower": -0.9987027906452894,
+      "ci_upper": 0.6411786088917747,
+      "p_value": 0.6391821073028008,
+      "includes_zero": true
+    },
+    "20": {
+      "r": -0.2549221318230754,
+      "ci_lower": -0.9999970452424992,
+      "ci_upper": 0.6100896942496277,
+      "p_value": 0.6258998970171148,
+      "includes_zero": true
+    },
+    "24": {
+      "r": -0.6264304939204589,
+      "ci_lower": -0.9999895523702997,
+      "ci_upper": 0.033340224434523884,
+      "p_value": 0.1832646715327526,
+      "includes_zero": true
+    },
+    "28": {
+      "r": -0.8068231933087165,
+      "ci_lower": -0.9995831658942014,
+      "ci_upper": -0.5467224094392138,
+      "p_value": 0.05237150160378776,
+      "includes_zero": false
+    },
+    "32": {
+      "r": -0.8736180006342785,
+      "ci_lower": -0.9993378711608172,
+      "ci_upper": -0.11866444976211941,
+      "p_value": 0.022949302105204825,
+      "includes_zero": false
+    }
+  },
+  "summary": {
+    "mid_layer_range": [
+      6,
+      16
+    ],
+    "mid_layers_tested": [
+      8,
+      12,
+      16
+    ],
+    "any_mid_layer_stable": false,
+    "late_layers_tested": [
+      24,
+      28,
+      32
+    ],
+    "any_late_layer_stable": true
+  }
+}

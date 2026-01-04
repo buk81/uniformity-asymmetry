@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-01-02T14:00:02.803933",
+  "model": "EleutherAI/pythia-6.9b",
+  "method": "Option A: Random Bins (same metric)",
+  "k_bins": 20,
+  "n_bootstrap": 10000,
+  "n_permutations": 200,
+  "bootstrap_results": {
+    "0": {
+      "r": 0.5470442109466076,
+      "ci_lower": 0.2892962232960616,
+      "ci_upper": 0.7406932146444778,
+      "p_value": 0.01255299085803137,
+      "includes_zero": false,
+      "n_bins": 20
+    },
+    "4": {
+      "r": 0.6031504097186727,
+      "ci_lower": 0.310513477045063,
+      "ci_upper": 0.8467826169301228,
+      "p_value": 0.004873794190384193,
+      "includes_zero": false,
+      "n_bins": 20
+    },
+    "8": {
+      "r": 0.5414201317900825,
+      "ci_lower": 0.1725845959199064,
+      "ci_upper": 0.7940255554950898,
+      "p_value": 0.013683600553068314,
+      "includes_zero": false,
+      "n_bins": 20
+    },
+    "12": {
+      "r": 0.4760691908437848,
+      "ci_lower": 0.09393552056672257,
+      "ci_upper": 0.7669799585078974,
+      "p_value": 0.03384919021130939,
+      "includes_zero": false,
+      "n_bins": 20
+    },
+    "16": {
+      "r": 0.5154737052582989,
+      "ci_lower": 0.14134606319624687,
+      "ci_upper": 0.8193715424801187,
+      "p_value": 0.020008698330950876,
+      "includes_zero": false,
+      "n_bins": 20
+    },
+    "20": {
+      "r": 0.42015746297708406,
+      "ci_lower": -0.0049287975835262,
+      "ci_upper": 0.7587038717055062,
+      "p_value": 0.06511763557231688,
+      "includes_zero": true,
+      "n_bins": 20
+    },
+    "24": {
+      "r": 0.2236846429267479,
+      "ci_lower": -0.19935660435407873,
+      "ci_upper": 0.6177844178666534,
+      "p_value": 0.3431171962466033,
+      "includes_zero": true,
+      "n_bins": 20
+    },
+    "28": {
+      "r": 0.0777155242536191,
+      "ci_lower": -0.2906251323196815,
+      "ci_upper": 0.5022999348904138,
+      "p_value": 0.7446751576577532,
+      "includes_zero": true,
+      "n_bins": 20
+    },
+    "32": {
+      "r": -0.6771662970566631,
+      "ci_lower": -0.8491388938210473,
+      "ci_upper": -0.36548155387113535,
+      "p_value": 0.0010391818006954996,
+      "includes_zero": false,
+      "n_bins": 20
+    }
+  },
+  "comparison": {
+    "original_n": 6,
+    "new_n": 20,
+    "original_sig_layers": 2,
+    "new_sig_layers": 6,
+    "mid_layer_now_significant": true,
+    "ci_width_reduction_pct": 55.591350330507815
+  }
+}

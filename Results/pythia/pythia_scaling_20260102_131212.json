@@ -1,0 +1,250 @@
+{
+  "timestamp": "2026-01-02T13:12:12.558280",
+  "research_question": "Does the layer correlation peak shift with model size?",
+  "models": {
+    "Pythia-410M": {
+      "model_name": "EleutherAI/pythia-410m",
+      "n_layers": 24,
+      "layer_results": {
+        "0": {
+          "correlation": -0.831263162366431,
+          "p_value": 0.040306032785501864
+        },
+        "4": {
+          "correlation": -0.9092815334431038,
+          "p_value": 0.011971461021335483
+        },
+        "8": {
+          "correlation": 0.12213662706185907,
+          "p_value": 0.8177060371603222
+        },
+        "12": {
+          "correlation": -0.1932379518095443,
+          "p_value": 0.7137509123846485
+        },
+        "16": {
+          "correlation": -0.7901292580358887,
+          "p_value": 0.06144663765609715
+        },
+        "20": {
+          "correlation": -0.9717772987471962,
+          "p_value": 0.0011835413137860774
+        },
+        "24": {
+          "correlation": -0.884901052996171,
+          "p_value": 0.019109249351549645
+        }
+      }
+    },
+    "Pythia-1.4B": {
+      "model_name": "EleutherAI/pythia-1.4b",
+      "n_layers": 24,
+      "layer_results": {
+        "0": {
+          "correlation": -0.629683953383461,
+          "p_value": 0.18030950594763104
+        },
+        "4": {
+          "correlation": -0.6506272327430651,
+          "p_value": 0.16176954334509422
+        },
+        "8": {
+          "correlation": -0.15710972986793786,
+          "p_value": 0.7662744116315977
+        },
+        "12": {
+          "correlation": 0.11884977355006192,
+          "p_value": 0.8225647321664611
+        },
+        "16": {
+          "correlation": -0.6255902782314842,
+          "p_value": 0.184031088058485
+        },
+        "20": {
+          "correlation": -0.8843628542194376,
+          "p_value": 0.019284777190470805
+        },
+        "24": {
+          "correlation": -0.692533448025529,
+          "p_value": 0.12727024100088688
+        }
+      }
+    },
+    "Pythia-6.9B": {
+      "model_name": "EleutherAI/pythia-6.9b",
+      "n_layers": 32,
+      "layer_results": {
+        "0": {
+          "correlation": -0.6012808953704523,
+          "p_value": 0.20677181811879888
+        },
+        "4": {
+          "correlation": -0.8107509344146153,
+          "p_value": 0.05033381583547907
+        },
+        "8": {
+          "correlation": 0.47104451389195895,
+          "p_value": 0.34569159857148496
+        },
+        "12": {
+          "correlation": 0.21338132250270941,
+          "p_value": 0.6847858115620863
+        },
+        "16": {
+          "correlation": -0.2454759264817754,
+          "p_value": 0.6391821073028008
+        },
+        "20": {
+          "correlation": -0.2549221318230754,
+          "p_value": 0.6258998970171148
+        },
+        "24": {
+          "correlation": -0.6264304939204589,
+          "p_value": 0.1832646715327526
+        },
+        "28": {
+          "correlation": -0.8068231933087165,
+          "p_value": 0.05237150160378776
+        },
+        "32": {
+          "correlation": -0.8736180006342785,
+          "p_value": 0.022949302105204825
+        }
+      }
+    },
+    "Pythia-12B": {
+      "model_name": "EleutherAI/pythia-12b",
+      "n_layers": 36,
+      "layer_results": {
+        "0": {
+          "correlation": -0.6278564028232159,
+          "p_value": 0.18196704254442297
+        },
+        "4": {
+          "correlation": -0.7830668329896355,
+          "p_value": 0.06548556111794862
+        },
+        "8": {
+          "correlation": -0.21540125518858466,
+          "p_value": 0.6818951787054104
+        },
+        "12": {
+          "correlation": -0.7744080110076869,
+          "p_value": 0.07059723320122513
+        },
+        "16": {
+          "correlation": -0.6738221073666643,
+          "p_value": 0.14223666441022959
+        },
+        "20": {
+          "correlation": -0.3739375126371151,
+          "p_value": 0.4652374345111691
+        },
+        "24": {
+          "correlation": -0.5856923514904456,
+          "p_value": 0.22191811604363734
+        },
+        "28": {
+          "correlation": -0.7384446572588687,
+          "p_value": 0.09367013889393101
+        },
+        "32": {
+          "correlation": -0.8925519446993191,
+          "p_value": 0.016697378438221513
+        },
+        "36": {
+          "correlation": -0.7979712907665972,
+          "p_value": 0.05710043760468204
+        }
+      }
+    }
+  },
+  "summary": [
+    {
+      "model": "Pythia-410M",
+      "n_layers": 24,
+      "max_pos_r": 0.12213662706185907,
+      "max_pos_layer": 8,
+      "max_pos_pct": 33.33333333333333,
+      "max_neg_r": -0.9717772987471962,
+      "max_neg_layer": 20,
+      "max_neg_pct": 83.33333333333334,
+      "final_r": -0.884901052996171,
+      "sign_changes": [
+        {
+          "layer_before": 4,
+          "layer_after": 8,
+          "midpoint_pct": 25.0
+        },
+        {
+          "layer_before": 8,
+          "layer_after": 12,
+          "midpoint_pct": 41.66666666666667
+        }
+      ]
+    },
+    {
+      "model": "Pythia-1.4B",
+      "n_layers": 24,
+      "max_pos_r": 0.11884977355006192,
+      "max_pos_layer": 12,
+      "max_pos_pct": 50.0,
+      "max_neg_r": -0.8843628542194376,
+      "max_neg_layer": 20,
+      "max_neg_pct": 83.33333333333334,
+      "final_r": -0.692533448025529,
+      "sign_changes": [
+        {
+          "layer_before": 8,
+          "layer_after": 12,
+          "midpoint_pct": 41.66666666666667
+        },
+        {
+          "layer_before": 12,
+          "layer_after": 16,
+          "midpoint_pct": 58.333333333333336
+        }
+      ]
+    },
+    {
+      "model": "Pythia-6.9B",
+      "n_layers": 32,
+      "max_pos_r": 0.47104451389195895,
+      "max_pos_layer": 8,
+      "max_pos_pct": 25.0,
+      "max_neg_r": -0.8736180006342785,
+      "max_neg_layer": 32,
+      "max_neg_pct": 100.0,
+      "final_r": -0.8736180006342785,
+      "sign_changes": [
+        {
+          "layer_before": 4,
+          "layer_after": 8,
+          "midpoint_pct": 18.75
+        },
+        {
+          "layer_before": 12,
+          "layer_after": 16,
+          "midpoint_pct": 43.75
+        }
+      ]
+    },
+    {
+      "model": "Pythia-12B",
+      "n_layers": 36,
+      "max_pos_r": -0.21540125518858466,
+      "max_pos_layer": 8,
+      "max_pos_pct": 22.22222222222222,
+      "max_neg_r": -0.8925519446993191,
+      "max_neg_layer": 32,
+      "max_neg_pct": 88.88888888888889,
+      "final_r": -0.7979712907665972,
+      "sign_changes": []
+    }
+  ],
+  "peak_analysis": {
+    "mean_peak_pct": 32.638888888888886,
+    "std_peak_pct": 10.825317547305483,
+    "peaks_stable": false
+  }
+}

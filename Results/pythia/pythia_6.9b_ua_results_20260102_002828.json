@@ -1,0 +1,70 @@
+{
+  "ground_truth_numeric": {
+    "n_pairs": 30,
+    "uniformity_a": 0.448214054107666,
+    "uniformity_b": 0.6591030955314636,
+    "asymmetry": -0.2108890414237976,
+    "output_preference": 1.6618022441864013,
+    "pct_prefer_a": 66.66666666666666
+  },
+  "ground_truth_nonnumeric": {
+    "n_pairs": 20,
+    "uniformity_a": 0.5379937291145325,
+    "uniformity_b": 0.5198518633842468,
+    "asymmetry": 0.018141865730285645,
+    "output_preference": 0.47074671983718874,
+    "pct_prefer_a": 75.0
+  },
+  "tech_philosophy": {
+    "n_pairs": 50,
+    "uniformity_a": 0.6857131719589233,
+    "uniformity_b": 0.7062513828277588,
+    "asymmetry": -0.02053821086883545,
+    "output_preference": 0.24054206848144533,
+    "pct_prefer_a": 60.0
+  },
+  "lifestyle": {
+    "n_pairs": 50,
+    "uniformity_a": 0.6768423914909363,
+    "uniformity_b": 0.6610753536224365,
+    "asymmetry": 0.015767037868499756,
+    "output_preference": -0.06624544143676758,
+    "pct_prefer_a": 48.0
+  },
+  "business": {
+    "n_pairs": 50,
+    "uniformity_a": 0.7683013677597046,
+    "uniformity_b": 0.73793625831604,
+    "asymmetry": 0.03036510944366455,
+    "output_preference": -0.03288464069366455,
+    "pct_prefer_a": 60.0
+  },
+  "scientific_facts": {
+    "n_pairs": 30,
+    "uniformity_a": 0.6025425791740417,
+    "uniformity_b": 0.6195024251937866,
+    "asymmetry": -0.016959846019744873,
+    "output_preference": 0.9903108914693196,
+    "pct_prefer_a": 73.33333333333333
+  },
+  "_global_stats": {
+    "total_pairs": 230,
+    "mean_asymmetry": -0.030685514211654663,
+    "std_asymmetry": 0.08269804938005955,
+    "bootstrap_95ci": [
+      -0.10663334528605144,
+      0.01741100351015727
+    ],
+    "cohens_d": -0.3710548725705274,
+    "ua_output_correlation": -0.8736180006342783,
+    "mean_output_preference": 0.5440453069739872
+  },
+  "_metadata": {
+    "model": "EleutherAI/pythia-6.9b",
+    "model_display": "Pythia-6.9B",
+    "timestamp": "2026-01-02T00:28:28.566429",
+    "n_bootstrap": 10000,
+    "random_seed": 42,
+    "purpose": "EleutherAI community contribution - Base model comparison"
+  }
+}

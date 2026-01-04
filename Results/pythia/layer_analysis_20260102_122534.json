@@ -1,0 +1,55 @@
+{
+  "model": "EleutherAI/pythia-6.9b",
+  "model_display": "Pythia-6.9B",
+  "timestamp": "2026-01-02T12:25:34.071247",
+  "strategies": {
+    "mean_pooled": {
+      "correlation": -0.8736180006342785,
+      "p_value": 0.022949302105204825
+    },
+    "last_token": {
+      "correlation": -0.3402347248759996,
+      "p_value": 0.5093406420848064
+    },
+    "first_token": {
+      "correlation": -0.761146224401188,
+      "p_value": 0.07876325073901032
+    },
+    "layer_0": {
+      "correlation": -0.6012808953704523,
+      "p_value": 0.20677181811879888
+    },
+    "layer_4": {
+      "correlation": -0.8107509344146153,
+      "p_value": 0.05033381583547907
+    },
+    "layer_8": {
+      "correlation": 0.47104451389195895,
+      "p_value": 0.34569159857148496
+    },
+    "layer_12": {
+      "correlation": 0.21338132250270941,
+      "p_value": 0.6847858115620863
+    },
+    "layer_16": {
+      "correlation": -0.2454759264817754,
+      "p_value": 0.6391821073028008
+    },
+    "layer_20": {
+      "correlation": -0.2549221318230754,
+      "p_value": 0.6258998970171148
+    },
+    "layer_24": {
+      "correlation": -0.6264304939204589,
+      "p_value": 0.1832646715327526
+    },
+    "layer_28": {
+      "correlation": -0.8068231933087165,
+      "p_value": 0.05237150160378776
+    },
+    "layer_32": {
+      "correlation": -0.8736180006342785,
+      "p_value": 0.022949302105204825
+    }
+  }
+}

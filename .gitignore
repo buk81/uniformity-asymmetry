@@ -31,3 +31,8 @@ venv/
 *token*
 *secret*
 *.key
+RELEASE_v2/
+PAPER_2_OUTLINE.md
+.DS_Store
+*.pyc
+__pycache__/
