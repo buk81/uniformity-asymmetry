@@ -171,6 +171,23 @@ ots verify timestamps/paper2_20260104.zip.ots
 
 ---
 
+## Post-Publication Updates
+
+### Neutral Statement Control Test (2026-01-05)
+
+Following community feedback (thanks Kevin!), we ran a control test comparing neutral vs political statement pairs:
+
+| Category | Mean Asymmetry | Result |
+|----------|----------------|--------|
+| Neutral (n=12) | 0.045 | Higher! |
+| Political (n=6) | 0.029 | Lower! |
+
+**Key Finding:** The metric measures **embedding-space structural differences**, not "bias" per se. Political opposites are semantically CLOSE (same topic) → low asymmetry. Different factual statements can be semantically FAR → variable asymmetry.
+
+**Full analysis:** `results/NEUTRAL_CONTROL_TEST_ANALYSIS.md`
+
+---
+
 ## License
 
 MIT License
