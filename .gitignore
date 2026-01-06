@@ -43,6 +43,12 @@ paper3/PAPER_3_PROTOCOL.md
 paper3/Figures/archive/
 paper3/Figures/__pycache__/
 
+# Paper 3 - arXiv-specific (not yet published)
+# Remove these lines AFTER arXiv submission
+paper3/thermodynamic_constraints_arxiv.zip
+paper3/Figures/fig_a6_beautiful_ones.png
+paper3/Figures/fig_a7_anisotropy_phases.png
+
 # Temporary/generated
 *.pyc
 __pycache__/

@@ -91,7 +91,7 @@ uniformity-asymmetry/
 │   ├── ARTIFACT_MAP.md                    # Artifact ↔ Notebook mapping
 │   ├── latex/                             # LaTeX sources
 │   ├── Figures/                           # Main paper figures
-│   ├── notebooks/                         # 40+ experiment notebooks
+│   ├── notebooks/                         # 34 experiment notebooks
 │   └── Results/                           # JSONs, PNGs (see ARTIFACT_MAP.md)
 │
 ├── notebooks/                             # Papers 1-2 notebooks

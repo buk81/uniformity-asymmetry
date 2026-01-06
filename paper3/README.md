@@ -14,8 +14,8 @@ This folder contains all materials for Paper #3 in the Transformer Dynamics Rese
 |----------|----------|
 | **PDF** | `Thermodynamic_Constraints_DElia_2026.pdf` |
 | **LaTeX** | `latex/thermodynamic_constraints.tex` |
-| **Figures** | `Figures/` (9 PNGs) |
-| **Notebooks** | `notebooks/` (40+ experiments) |
+| **Figures** | `Figures/` (13 PNGs) |
+| **Notebooks** | `notebooks/` (34 experiments) |
 | **Results** | `Results/` (JSONs, PNGs) |
 | **Artifact Map** | `ARTIFACT_MAP.md` |
 
@@ -27,9 +27,51 @@ This folder contains all materials for Paper #3 in the Transformer Dynamics Rese
 |-----|---------|----------|
 | **Kleiber's Law** | G_max = 10^(1/L) | r = -0.81, p = 0.014 |
 | **Training Heritage** | Lab determines thermodynamic sign | EleutherAI: dampening, Meta/OpenAI: expansion |
-| **Spectral Signature** | ||W_V||/||W_O|| predicts behavior | 10× magnitude differences |
+| **Spectral Signature** | \|\|W_V\|\|/\|\|W_O\|\| predicts behavior | 10× magnitude differences |
 
 **Core Finding:** Heritage > Geometry > Scale
+
+---
+
+## Paper Claims → Notebooks
+
+This table maps each major claim in the paper to the notebook(s) that validate it.
+
+| Paper Section | Claim | Notebook(s) |
+|---------------|-------|-------------|
+| **§4 (Fig. 1)** | Kleiber's Law: G_max = 10^(1/L) | `Scaling_Law_Multi_Pythia.ipynb` |
+| **§5.1 (Fig. 2)** | Cross-architecture benchmark (23+ models) | `Grand_Unified_Thermodynamic_Benchmark.ipynb`, `4Model_Cross_Architecture_Validation.ipynb` |
+| **§5.2** | Training Heritage dominates | `Grand_Unified_Thermodynamic_Benchmark.ipynb` |
+| **§5.3 (Fig. 3)** | Spectral Signature: \|\|W_V\|\|/\|\|W_O\|\| | `Restriction_Maps_Extraction.ipynb` |
+| **§5.4** | Dimensional Crowding (ρ = H/d_head) | `High_Rho_Model_Hunt_NO_FINAL_LN.ipynb`, `Beautiful_Ones_Per_Head_Analysis.ipynb` |
+| **§5.5** | RLHF Invariance (Twin Test) | `Twin_Test_Base_vs_Instruct.ipynb` |
+| **§5.6** | Mistral Paradox | `Mistral_Paradox_Investigation.ipynb` |
+| **Appendix A** | OPT Anomaly Investigation | `OPT_Anomaly_Investigation.ipynb` |
+| **Appendix B (Fig. A5)** | Sheaf Laplacian Trace Proxy | `Restriction_Maps_Extraction.ipynb`, `H4_Sheaf_Laplacian_Spectral_Validation.ipynb` |
+| **Appendix C (Fig. A7)** | 5-Phase Anisotropy Structure | `Anisotropy_Profile_Pythia.ipynb`, `Anisotropy_Profile_Gemma.ipynb` |
+| **Fig. A1** | Layer Dynamics | `Clean_Residual_Gain_NO_FINAL_LN.ipynb` |
+| **Fig. A2** | L* Validation | `L_Star_Cross_Heritage_Validation.ipynb`, `Improved_L_Star_Formula.ipynb` |
+| **Fig. A3** | Pythia Scaling | `Pythia_Family_Residual_Gain_Sweep.ipynb` |
+| **Fig. A4** | Input Robustness | `Input_Dependency_Thermodynamics.ipynb` |
+| **Fig. A6** | Beautiful Ones (Per-Head) | `Beautiful_Ones_Per_Head_Analysis.ipynb` |
+
+---
+
+## All 34 Notebooks
+
+| Category | Notebooks |
+|----------|-----------|
+| **Core Validation** | `4Model_Cross_Architecture_Validation`, `Cross_Architecture_Validation`, `Grand_Unified_Thermodynamic_Benchmark` |
+| **Scaling Laws** | `Scaling_Law_Multi_Pythia`, `Pythia_Family_Residual_Gain_Sweep`, `High_Rho_Model_Hunt_NO_FINAL_LN` |
+| **Sheaf Theory** | `Restriction_Maps_Extraction`, `Restriction_Map_Spectral_Analysis`, `H4_Sheaf_Laplacian_Spectral_Validation`, `H4_v2_Extended_Models` |
+| **Per-Head Analysis** | `Beautiful_Ones_Per_Head_Analysis`, `Anisotropy_Profile_Pythia`, `Anisotropy_Profile_Gemma` |
+| **Architecture Tests** | `GPT2_LayerNorm_Validation`, `GPTJ_Parallel_Architecture_Test`, `Vision_Transformer_Test`, `FFN_Expansion_Analysis`, `FFN_Expansion_Pythia6.9B` |
+| **Anomaly Investigations** | `OPT_Anomaly_Investigation`, `Mistral_Paradox_Investigation`, `Hypothesis_Tests_LLaMA_Anomaly`, `LLaMA2_vs_LLaMA3_Long_Context_Test` |
+| **Twin Tests** | `Twin_Test_Base_vs_Instruct`, `RLHF_Safety_Brake_Test` |
+| **L* Formula** | `L_Star_Cross_Heritage_Validation`, `L_Star_Cross_Heritage_SignChange`, `Improved_L_Star_Formula` |
+| **Robustness** | `Input_Dependency_Thermodynamics`, `Neutral_Statement_Control_Test` |
+| **Clean Metrics** | `Clean_Residual_Gain_Validation`, `Clean_Residual_Gain_NO_FINAL_LN` |
+| **Special** | `Bentov_Point_Characterization`, `High_Rho_Model_Hunt` |
 
 ---
 
@@ -40,23 +82,13 @@ This folder contains all materials for Paper #3 in the Transformer Dynamics Rese
 pip install torch transformers numpy scipy matplotlib seaborn
 ```
 
-### Core Notebooks (in recommended order)
+### Quick Start (5 Core Notebooks)
 
-1. **Cross-Architecture Validation**
-   - `notebooks/4Model_Cross_Architecture_Validation.ipynb`
-   - Validates thermodynamic signatures across model families
-
-2. **Pythia Scaling Law**
-   - `notebooks/Scaling_Law_Multi_Pythia.ipynb`
-   - Kleiber's Law derivation (Fig. 1)
-
-3. **Twin Test (Base vs Instruct)**
-   - `notebooks/Twin_Test_Base_vs_Instruct.ipynb`
-   - Thermodynamic invariance under RLHF
-
-4. **Sheaf Laplacian**
-   - `notebooks/Restriction_Maps_Extraction.ipynb`
-   - Trace proxy computation (Fig. A5)
+1. **`Scaling_Law_Multi_Pythia.ipynb`** → Kleiber's Law (Fig. 1)
+2. **`Grand_Unified_Thermodynamic_Benchmark.ipynb`** → Training Heritage (Fig. 2)
+3. **`Restriction_Maps_Extraction.ipynb`** → Spectral Signature (Fig. 3)
+4. **`Beautiful_Ones_Per_Head_Analysis.ipynb`** → Per-Head Analysis (Fig. A6)
+5. **`Twin_Test_Base_vs_Instruct.ipynb`** → RLHF Invariance (§5.5)
 
 ### Reproducibility
 All experiments use `PYTHONHASHSEED=42` for deterministic results.
@@ -77,6 +109,8 @@ See `ARTIFACT_MAP.md` for complete mapping of:
 | `scaling_law_multi_pythia_*.json` | Scaling_Law_Multi_Pythia | Fig. 1 |
 | `twin_test_results_*.json` | Twin_Test_Base_vs_Instruct | §5.5 |
 | `restriction_maps_results.json` | Restriction_Maps_Extraction | Fig. A5 |
+| `beautiful_ones_heatmap.png` | Beautiful_Ones_Per_Head_Analysis | Fig. A6 |
+| `anisotropy_profile_pythia.png` | Anisotropy_Profile_Pythia | Fig. A7 |
 
 ---
 
@@ -103,7 +137,7 @@ paper3/
 │   ├── 4Model_Cross_Architecture_Validation.ipynb
 │   ├── Scaling_Law_Multi_Pythia.ipynb
 │   ├── Twin_Test_Base_vs_Instruct.ipynb
-│   └── ... (40+ notebooks)
+│   └── ... (34 notebooks total)
 │
 ├── Results/                                   # JSON results + plots
 │   ├── *.json                                 # Raw measurements
