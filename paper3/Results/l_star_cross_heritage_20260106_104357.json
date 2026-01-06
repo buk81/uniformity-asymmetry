@@ -1,0 +1,76 @@
+{
+  "experiment": "L* Cross-Heritage Validation v2",
+  "timestamp": "20260106_104357",
+  "formula": "L* = L \u00d7 (0.11 + 0.012\u00d7L + 4.9/H)",
+  "n_models": 6,
+  "overall_mape": 15.701388888888891,
+  "verdict": "CALIBRATION NEEDED",
+  "results": [
+    {
+      "model": "EleutherAI/pythia-160m",
+      "lab": "EleutherAI",
+      "L": 12,
+      "H": 12,
+      "arch": "pythia",
+      "L_star_predicted": 7.948000000000001,
+      "L_star_empirical": 5.6,
+      "L_star_std": 0.8,
+      "error_pct": 19.56666666666668
+    },
+    {
+      "model": "EleutherAI/pythia-410m",
+      "lab": "EleutherAI",
+      "L": 24,
+      "H": 16,
+      "arch": "pythia",
+      "L_star_predicted": 16.902,
+      "L_star_empirical": 14.0,
+      "L_star_std": 0.0,
+      "error_pct": 12.091666666666672
+    },
+    {
+      "model": "facebook/opt-125m",
+      "lab": "Meta",
+      "L": 12,
+      "H": 12,
+      "arch": "opt",
+      "L_star_predicted": 7.948000000000001,
+      "L_star_empirical": 9.6,
+      "L_star_std": 1.8547236990991407,
+      "error_pct": 13.766666666666652
+    },
+    {
+      "model": "facebook/opt-350m",
+      "lab": "Meta",
+      "L": 24,
+      "H": 16,
+      "arch": "opt",
+      "L_star_predicted": 16.902,
+      "L_star_empirical": 15.6,
+      "L_star_std": 5.161395160225576,
+      "error_pct": 5.425000000000005
+    },
+    {
+      "model": "bigscience/bloom-560m",
+      "lab": "BigScience",
+      "L": 24,
+      "H": 16,
+      "arch": "bloom",
+      "L_star_predicted": 16.902,
+      "L_star_empirical": 10.2,
+      "L_star_std": 3.1874754901018454,
+      "error_pct": 27.925000000000004
+    },
+    {
+      "model": "openai-community/gpt2",
+      "lab": "OpenAI",
+      "L": 12,
+      "H": 12,
+      "arch": "gpt2",
+      "L_star_predicted": 7.948000000000001,
+      "L_star_empirical": 9.8,
+      "L_star_std": 1.5999999999999999,
+      "error_pct": 15.43333333333333
+    }
+  ]
+}

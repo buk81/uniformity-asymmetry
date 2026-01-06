@@ -1,0 +1,216 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Summary of Empirical Findings}
+
+Our multi-scale analysis across eight Pythia models (70M to 12B parameters) reveals three universal principles and one scale-dependent phenomenon:
+
+\textbf{Universal Principles:}
+\begin{enumerate}
+    \item \textbf{Attention is invariably contractive.} Across all models, 97--100\% of attention layers exhibit gain $< 1$, compressing representations toward a harmonic subspace.
+    \item \textbf{The final MLP layer always expands.} Every model tested shows final layer MLP gain $> 1$, with values ranging from 1.5$\times$ (70M) to 7.7$\times$ (12B).
+    \item \textbf{Net compression dominates.} Despite varying MLP behavior, 94--96\% of layers show net contraction (attention $\times$ MLP gain $< 1$).
+\end{enumerate}
+
+\textbf{Scale-Dependent Phenomenon:}
+\begin{enumerate}
+    \setcounter{enumi}{3}
+    \item \textbf{MLP contraction decreases with scale.} Small models show 75--88\% MLP-contracting layers, while Pythia-12B shows only 6\%---a dramatic shift from compression to expansion.
+\end{enumerate}
+
+These findings culminate in a robust scaling law:
+\begin{equation}
+    \text{Final\_MLP\_Gain} = 0.013 \times \text{Params}^{0.265 \pm 0.079}
+\end{equation}
+with $R^2 = 0.65$ and $p = 0.015$, confirming statistical significance.
+
+\subsection{The Cognitive Inertia Hypothesis}
+
+We propose that the observed scaling law reflects a fundamental property of deep attention networks that we term \textbf{cognitive inertia}: the tendency of larger models to resist prediction in favor of representational stability.
+
+\subsubsection{Physical Analogy}
+
+Consider Newton's second law: $F = ma$. In the context of Transformers:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+\toprule
+Physical Quantity & LLM Analog \\
+\midrule
+Mass ($m$) & Contextual stability ($\propto$ parameters, depth) \\
+Force ($F$) & Final MLP expansion gain \\
+Acceleration ($a$) & Decision sharpness (logit spread) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Our scaling law states $F \propto m^{0.265}$, implying that the ``force'' required to produce a decision grows with model ``mass''---but sublinearly, suggesting a cumulative lever effect across layers.
+
+\subsubsection{The Stability-Decision Tradeoff}
+
+Large models build increasingly stable representations through repeated attention operations. Each attention layer acts as a diffusion operator, smoothing representations toward consensus. This creates what we call a \textbf{representational potential well}---a stable attractor state that resists perturbation.
+
+However, next-token prediction fundamentally requires \textit{breaking} this consensus. The model must commit to a single token from a vocabulary of 50,000+, necessitating sharp discrimination rather than smooth consensus.
+
+The final MLP layer serves as the \textbf{symmetry-breaking mechanism}. Its expansion gain represents the energy required to escape the potential well created by preceding layers. Larger models create deeper wells, requiring larger explosions.
+
+\subsection{Thermodynamic Interpretation}
+
+\subsubsection{Entropy Flow Through Layers}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llll}
+\toprule
+Phase & Layers & Operation & Entropy \\
+\midrule
+Consensus & $0$ to $L-1$ & Attention averaging & $\downarrow$ Decreasing \\
+Bottleneck & $L^*$ & Maximum compression & Minimum \\
+Explosion & $L$ & MLP expansion & $\uparrow$ Increasing \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The attention mechanism acts as a \textbf{cooling process}, ordering information into a low-entropy harmonic subspace. The final MLP acts as a \textbf{heating process}, injecting entropy to enable discrimination.
+
+\subsubsection{The Second Law for LLMs}
+
+We conjecture a principle analogous to the second law of thermodynamics:
+
+\begin{quote}
+\textit{The work required to break representational equilibrium grows with the depth of that equilibrium.}
+\end{quote}
+
+Formally, if $\mathcal{S}_{\text{harm}}$ denotes the harmonic subspace stability and $W_{\text{decision}}$ denotes the work for decision-making:
+\begin{equation}
+    W_{\text{decision}} \propto \|\mathcal{S}_{\text{harm}}\|^{\alpha}
+\end{equation}
+Our measured $\alpha \approx 0.27$ quantifies this relationship empirically.
+
+\subsection{Architectural Critique: The Consensus-Discrimination Paradox}
+
+Our findings reveal a fundamental tension in Transformer design:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lll}
+\toprule
+Design Goal & Mechanism & Effect \\
+\midrule
+Context understanding & Attention (consensus) & Stabilizes representations \\
+Token prediction & MLP expansion (discrimination) & Destabilizes representations \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{The paradox:} Transformers are optimized for consensus-building (attention), but their task requires discrimination (prediction). As models scale, attention becomes more effective at consensus---creating stable representations increasingly difficult to break.
+
+\subsubsection{The VASE Architecture as Symptom}
+
+Pythia-12B exhibits what we call the \textbf{VASE architecture}: wide throughout with minimal compression, culminating in massive final expansion (7.7$\times$). Only 6\% of MLP layers contract.
+
+This represents \textit{architectural resignation}: the model has learned that compression is futile at its scale, because the final explosion dominates. It maintains representational breadth throughout, postponing all discrimination to the final layer.
+
+\subsubsection{Evolution of Architecture with Scale}
+
+We identify three architectural regimes:
+
+\begin{itemize}
+    \item \textbf{FUNNEL} (70M--410M): Wide $\rightarrow$ Narrow $\rightarrow$ Slightly Wide
+    \item \textbf{HOUR-GLASS} (1B--2.8B): Wide $\rightarrow$ Narrow $\rightarrow$ Wide
+    \item \textbf{VASE} (6.9B--12B): Wide $\rightarrow$ Wide $\rightarrow$ Very Wide
+\end{itemize}
+
+The evolution from FUNNEL to VASE suggests compression becomes relatively less important as models scale, while final expansion becomes relatively more important.
+
+\subsection{The Scaling Paradox: Why Bigger May Hit Limits}
+
+\subsubsection{Extrapolation to Frontier Models}
+
+Applying our scaling law to larger models:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrr}
+\toprule
+Model & Parameters & Predicted Final MLP Gain \\
+\midrule
+Pythia-12B & 12B & 7.7$\times$ (measured) \\
+LLaMA-70B & 70B & $\sim$13$\times$ \\
+GPT-3 & 175B & $\sim$18$\times$ \\
+GPT-4 (est.) & 1.8T & $\sim$30$\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Potential Failure Modes}
+
+As gain increases, several failure modes become likely:
+
+\begin{enumerate}
+    \item \textbf{Numerical Instability:} Gains of 30--50$\times$ risk gradient explosion and inference instability.
+    \item \textbf{Overconfident Predictions:} Extreme expansion creates sharp, poorly-calibrated logit distributions.
+    \item \textbf{Brittleness:} High-gain final layers amplify small perturbations.
+    \item \textbf{Training Difficulty:} The gradient landscape becomes ill-conditioned.
+\end{enumerate}
+
+\subsubsection{The Hamlet Problem of AI}
+
+We observe a philosophical dimension: larger models exhibit what we term the \textbf{Hamlet Problem}---the more the model knows, the harder it finds to act.
+
+The extensive plateau phase (layers 7--30 in large models) represents prolonged ``deliberation'' before the explosive ``decision'' in the final layer. This mirrors the cognitive pattern of analysis paralysis.
+
+\subsection{Implications for Future Architectures}
+
+\subsubsection{Decoupling Consensus and Discrimination}
+
+Future designs might:
+\begin{itemize}
+    \item \textbf{Parallel pathways:} Separate ``consensus'' and ``discrimination'' streams.
+    \item \textbf{Gated discrimination:} Bypass consensus layers when confidence is high.
+    \item \textbf{Sparse attention:} Maintain ``escape routes'' in attention patterns.
+\end{itemize}
+
+\subsubsection{Distributed Prediction}
+
+Rather than concentrating prediction in the final layer:
+\begin{itemize}
+    \item \textbf{Early exits:} Predictions at multiple layers.
+    \item \textbf{Mixture of depths:} Route tokens through variable layer counts.
+\end{itemize}
+
+\subsubsection{Non-Diffusive Attention}
+
+Standard attention is inherently diffusive. Alternatives might include:
+\begin{itemize}
+    \item \textbf{Sharpening attention:} Mechanisms that sharpen rather than smooth.
+    \item \textbf{Competitive attention:} Winner-take-all dynamics.
+\end{itemize}
+
+\subsection{Connection to Sheaf Theory}
+
+Our findings provide empirical grounding for the sheaf-theoretic framework.
+
+The universal contractivity of attention confirms that restriction maps $\rho_{ij} = \sqrt{A_{ij}} \cdot W_V$ are predominantly contractive, driving representations toward the harmonic subspace $\mathcal{H} = \ker(\Delta_{\mathcal{F}})$.
+
+The final layer explosion can be interpreted as overcoming a \textbf{cohomological obstruction}. The harmonic subspace $\mathcal{H}$ represents sections satisfying the gluing axiom. Prediction requires leaving $\mathcal{H}$, obstructed by $H^1(G; \mathcal{F}) \neq 0$. The MLP expansion provides energy to overcome this obstruction.
+
+The scaling exponent $\alpha \approx 0.27$ may reflect the rate at which cohomological complexity grows with model size---larger models have richer sheaf structures creating higher-dimensional obstruction spaces.
+
+\subsection{Limitations}
+
+\begin{itemize}
+    \item \textbf{Model Family:} Analysis focuses on Pythia; generalization to other families requires validation.
+    \item \textbf{Single Prompt:} All measurements use one prompt; different prompts may exhibit different dynamics.
+    \item \textbf{Gain vs. Information:} Norm-based gain captures magnitude but not information content.
+    \item \textbf{Causal Claims:} Our analysis is observational, identifying correlations not causation.
+\end{itemize}
+
+\subsection{Conclusion}
+
+The scaling law $\text{Final\_MLP\_Gain} \propto \text{Params}^{0.27}$ reveals a fundamental tension in Transformer architectures. As models scale, they become increasingly effective at consensus, creating deep representational potential wells. Breaking these wells requires increasingly violent explosions.
+
+This \textbf{cognitive inertia} suggests current scaling approaches may face diminishing returns. The thermodynamic cost of decision-making grows with capacity, potentially creating an efficiency barrier.
+
+We term this the \textbf{Scaling Paradox}: bigger models are better at understanding, but increasingly struggle with deciding. Resolving this paradox may be key to next-generation architectures.

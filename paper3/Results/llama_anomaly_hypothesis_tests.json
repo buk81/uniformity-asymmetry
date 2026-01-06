@@ -1,0 +1,90 @@
+{
+  "experiment": "LLaMA 3.1 Anomaly - Hypothesis Tests",
+  "date": "2026-01-05",
+  "hypothesis_1_titanium_projector": {
+    "description": "W_U norm compensates for residual contraction",
+    "results": {
+      "llama3.1-8b": {
+        "model": "llama3.1-8b",
+        "shape": [
+          128256,
+          4096
+        ],
+        "vocab_size": 128256,
+        "hidden_dim": 4096,
+        "frobenius_norm": 331.49127197265625,
+        "spectral_norm": 94.60694885253906,
+        "mean_row_norm": 0.916771411895752,
+        "std_row_norm": 0.127690389752388,
+        "spectral_per_sqrt_vocab": 0.2641704225034413,
+        "effective_amplification": 45.41133544921875,
+        "last_gain": 0.48
+      },
+      "mistral-7b": {
+        "model": "mistral-7b",
+        "shape": [
+          32000,
+          4096
+        ],
+        "vocab_size": 32000,
+        "hidden_dim": 4096,
+        "frobenius_norm": 48.45707702636719,
+        "spectral_norm": 16.140300750732422,
+        "mean_row_norm": 0.2688712477684021,
+        "std_row_norm": 0.032955337315797806,
+        "spectral_per_sqrt_vocab": 0.09022702413982145,
+        "effective_amplification": 22.11221202850342,
+        "last_gain": 1.37
+      },
+      "gemma2-9b": {
+        "model": "gemma2-9b",
+        "shape": [
+          256000,
+          3584
+        ],
+        "vocab_size": 256000,
+        "hidden_dim": 3584,
+        "frobenius_norm": 878.161865234375,
+        "spectral_norm": 446.4410400390625,
+        "mean_row_norm": 1.7225059270858765,
+        "std_row_norm": 0.2129543125629425,
+        "spectral_per_sqrt_vocab": 0.8823565796861652,
+        "effective_amplification": 1272.3569641113281,
+        "last_gain": 2.85
+      }
+    }
+  },
+  "hypothesis_2_rope": {
+    "description": "Long-context RoPE requires dampening",
+    "results": {
+      "llama3.1-8b": {
+        "rope_theta": 500000.0,
+        "rope_scaling": {
+          "factor": 8.0,
+          "low_freq_factor": 1.0,
+          "high_freq_factor": 4.0,
+          "original_max_position_embeddings": 8192,
+          "rope_type": "llama3"
+        },
+        "max_position": 131072,
+        "context_length": 128000
+      },
+      "mistral-7b": {
+        "rope_theta": 10000.0,
+        "rope_scaling": null,
+        "max_position": 32768,
+        "context_length": 8192
+      },
+      "gemma2-9b": {
+        "rope_theta": 10000.0,
+        "rope_scaling": null,
+        "max_position": 8192,
+        "context_length": 8192
+      }
+    }
+  },
+  "hypothesis_3_grokking": {
+    "description": "Training scale causes efficient representations",
+    "status": "THEORETICAL - Requires checkpoint analysis"
+  }
+}

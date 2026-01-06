@@ -1,0 +1,108 @@
+Model,Norm_Type,Role,Category,Complexity,Prompt,Prompt_Short,Entropy,Last_Gain,Total_Amp,Top_Token,Top_Prob,N_Layers
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Factual,1,The capital city of France is,The capital city of France is...,4.9601235,0.7694174757281553,5.4566971490048415, Paris,0.1632,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Factual,1,The atomic number of oxygen is,The atomic number of oxygen is...,1.263736,0.6902460456942003,3.389428263214671, 16,0.7227,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Factual,1,Water boils at a temperature of,Water boils at a temperature of...,5.165438,0.9229756418696511,6.301123595505618, about,0.1213,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Factual,1,The largest planet in our solar system is,The largest planet in our solar system i...,3.7027843,0.7459222082810539,5.1780076211213935, Jupiter,0.3074,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Factual,1,The currency used in Japan is,The currency used in Japan is...,2.807392,0.803633822501747,4.8936170212765955, the,0.4678,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Syntactic,5,"The agreement, which, notwithstanding the fact that it was signed only yesterday, effectively binds all parties immediately, stipulates that","The agreement, which, notwithstanding th...",4.5576043,0.8298068077276909,9.62775183455637, the,0.368,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Syntactic,5,"Although the weather was extremely cold, and despite the fact that they had no coats, the children decided to","Although the weather was extremely cold,...",4.322373,0.8423035522066739,8.551912568306012, go,0.1682,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Syntactic,5,"The professor, having reviewed the complex derivation multiple times without finding the error, finally realized that","The professor, having reviewed the compl...",3.0718584,0.8002819548872181,8.705431309904153, the,0.3289,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Syntactic,5,To imply that such a fundamental shift in policy could occur without significant public debate is to suggest that,To imply that such a fundamental shift i...,4.3447914,0.759,7.377885783718105, the,0.309,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Syntactic,5,"Not only did the experiment fail to yield the expected results, but it also demonstrated that the initial hypothesis was",Not only did the experiment fail to yiel...,3.2515066,0.8487124463519313,7.91, wrong,0.2092,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Cliche,2,The true meaning of happiness is often found in,The true meaning of happiness is often f...,3.9538033,0.7802136031478358,6.155210643015521, the,0.41,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Cliche,2,Actions speak louder than,Actions speak louder than...,1.4444913,0.8189134808853119,5.849101796407186, words,0.833,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Cliche,2,"It is what it is, and we must simply","It is what it is, and we must simply...",3.8691475,0.9128316188413643,8.2294081757169, accept,0.1708,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Cliche,2,Time heals all,Time heals all...,1.7213478,0.8206951026856241,4.824143934997098, wounds,0.7173,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Cliche,2,"Life is a journey, not a","Life is a journey, not a...",0.31555253,0.8396764985727878,3.295985060690943, destination,0.9585,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Novel,4,The epistemological implications of quantum decoherence suggest that the observer is,The epistemological implications of quan...,4.211759,0.7647761194029851,6.007033997655334, not,0.274,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Novel,4,"If consciousness creates reality, then the paradox of the unobserved electron implies","If consciousness creates reality, then t...",1.303446,0.6910880262438491,3.036636636636637, that,0.685,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Novel,4,The intersection of baroque architecture and cybernetic theory creates a space where,The intersection of baroque architecture...,5.616253,0.8373873873873874,9.406704617330803, the,0.2534,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Novel,4,Calculating the trajectory of a hyperspace jump requires factoring in the variability of,Calculating the trajectory of a hyperspa...,3.3971133,0.804437564499484,7.623471882640587, the,0.525,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Novel,4,The symbiotic relationship between fungal mycelium and digital neural networks results in,The symbiotic relationship between funga...,4.5537477,0.7801980198019802,6.9734513274336285, the,0.2527,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Nonsense,3,Table sky run blue jump quickly under over,Table sky run blue jump quickly under ov...,5.9302077,0.7622950819672131,5.798561151079137,cast,0.0694,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Nonsense,3,Purple idea furiously sleep colorless green,Purple idea furiously sleep colorless gr...,5.9894505,0.9719334719334719,8.021447721179625, idea,0.2148,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Nonsense,3,Clock river dance potato seven fast,Clock river dance potato seven fast...,6.359151,0.7263588979895755,4.179967862881628, and,0.0833,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Nonsense,3,Window eat loud tomorrow yellow under,Window eat loud tomorrow yellow under...,6.421308,0.7844190732034922,5.002141327623126, the,0.08777,32
+Pythia-6.9B,LayerNorm,Control (LayerNorm),Nonsense,3,Fish bicycle logic cloud mountain swim,Fish bicycle logic cloud mountain swim...,7.4498277,0.8104265402843602,5.40978744438952,"
+",0.0345,32
+Gemma-7B,RMSNorm,Exploder,Factual,1,The capital city of France is,The capital city of France is...,4.2152014,2.1458910433979685,4.084358523725835, a,0.1547,28
+Gemma-7B,RMSNorm,Exploder,Factual,1,The atomic number of oxygen is,The atomic number of oxygen is...,0.77261233,1.3211951447245565,1.2466960352422907, $,0.6875,28
+Gemma-7B,RMSNorm,Exploder,Factual,1,Water boils at a temperature of,Water boils at a temperature of...,2.7387576,2.034897713598075,3.62486602357985, ,0.396,28
+Gemma-7B,RMSNorm,Exploder,Factual,1,The largest planet in our solar system is,The largest planet in our solar system i...,4.635408,2.04,3.0854092526690393, Jupiter,0.165,28
+Gemma-7B,RMSNorm,Exploder,Factual,1,The currency used in Japan is,The currency used in Japan is...,1.1235647,2.251851851851852,4.003511852502195, the,0.7686,28
+Gemma-7B,RMSNorm,Exploder,Syntactic,5,"The agreement, which, notwithstanding the fact that it was signed only yesterday, effectively binds all parties immediately, stipulates that","The agreement, which, notwithstanding th...",4.7613444,2.624889673433363,5.363390441839495, the,0.3896,28
+Gemma-7B,RMSNorm,Exploder,Syntactic,5,"Although the weather was extremely cold, and despite the fact that they had no coats, the children decided to","Although the weather was extremely cold,...",4.181109,2.1734513274336282,5.253475935828877, go,0.2057,28
+Gemma-7B,RMSNorm,Exploder,Syntactic,5,"The professor, having reviewed the complex derivation multiple times without finding the error, finally realized that","The professor, having reviewed the compl...",1.5596079,1.8681592039800996,2.750915750915751, the,0.7036,28
+Gemma-7B,RMSNorm,Exploder,Syntactic,5,To imply that such a fundamental shift in policy could occur without significant public debate is to suggest that,To imply that such a fundamental shift i...,4.43663,2.308675799086758,4.613138686131387, the,0.3567,28
+Gemma-7B,RMSNorm,Exploder,Syntactic,5,"Not only did the experiment fail to yield the expected results, but it also demonstrated that the initial hypothesis was",Not only did the experiment fail to yiel...,3.23374,2.0980926430517712,3.6377952755905514, incorrect,0.298,28
+Gemma-7B,RMSNorm,Exploder,Cliche,2,The true meaning of happiness is often found in,The true meaning of happiness is often f...,2.9217792,2.1859617137648133,4.440740740740741, the,0.5513,28
+Gemma-7B,RMSNorm,Exploder,Cliche,2,Actions speak louder than,Actions speak louder than...,0.15221682,2.371732817037754,3.4604519774011298, words,0.986,28
+Gemma-7B,RMSNorm,Exploder,Cliche,2,"It is what it is, and we must simply","It is what it is, and we must simply...",3.8428404,2.3321428571428573,2.370235934664247, accept,0.3228,28
+Gemma-7B,RMSNorm,Exploder,Cliche,2,Time heals all,Time heals all...,0.72781086,2.55017473789316,3.714909090909091, wounds,0.8877,28
+Gemma-7B,RMSNorm,Exploder,Cliche,2,"Life is a journey, not a","Life is a journey, not a...",0.6460156,2.0111919418019024,3.1225021720243267, destination,0.908,28
+Gemma-7B,RMSNorm,Exploder,Novel,4,The epistemological implications of quantum decoherence suggest that the observer is,The epistemological implications of quan...,3.8935215,2.062788550323176,3.915863277826468, an,0.1846,28
+Gemma-7B,RMSNorm,Exploder,Novel,4,"If consciousness creates reality, then the paradox of the unobserved electron implies","If consciousness creates reality, then t...",1.4124408,2.0821114369501466,1.8298969072164948, that,0.7583,28
+Gemma-7B,RMSNorm,Exploder,Novel,4,The intersection of baroque architecture and cybernetic theory creates a space where,The intersection of baroque architecture...,5.730746,2.5891472868217056,4.137646249139711, the,0.2527,28
+Gemma-7B,RMSNorm,Exploder,Novel,4,Calculating the trajectory of a hyperspace jump requires factoring in the variability of,Calculating the trajectory of a hyperspa...,3.8571446,2.274296094459582,5.3590155163188875, the,0.3474,28
+Gemma-7B,RMSNorm,Exploder,Novel,4,The symbiotic relationship between fungal mycelium and digital neural networks results in,The symbiotic relationship between funga...,4.1515326,2.611063829787234,5.639705882352941, a,0.339,28
+Gemma-7B,RMSNorm,Exploder,Nonsense,3,Table sky run blue jump quickly under over,Table sky run blue jump quickly under ov...,6.6636214,2.8817005545286505,3.899937460913071, through,0.069,28
+Gemma-7B,RMSNorm,Exploder,Nonsense,3,Purple idea furiously sleep colorless green,Purple idea furiously sleep colorless gr...,7.268617,2.5311812179016875,1.3766959297685555, ideas,0.0563,28
+Gemma-7B,RMSNorm,Exploder,Nonsense,3,Clock river dance potato seven fast,Clock river dance potato seven fast...,7.682769,2.8131655372700872,2.3703099510603587, food,0.03354,28
+Gemma-7B,RMSNorm,Exploder,Nonsense,3,Window eat loud tomorrow yellow under,Window eat loud tomorrow yellow under...,7.7693,2.9244186046511627,3.404399323181049, the,0.05966,28
+Gemma-7B,RMSNorm,Exploder,Nonsense,3,Fish bicycle logic cloud mountain swim,Fish bicycle logic cloud mountain swim...,7.196358,2.770794824399261,2.1491039426523297,"
+
+",0.05225,28
+Mistral-7B,RMSNorm,Inertia,Factual,1,The capital city of France is,The capital city of France is...,4.360517,1.021243115656963,180.1018970189702,a,0.1288,32
+Mistral-7B,RMSNorm,Inertia,Factual,1,The atomic number of oxygen is,The atomic number of oxygen is...,1.0504079,1.1179078014184398,177.56655665566558,,0.804,32
+Mistral-7B,RMSNorm,Inertia,Factual,1,Water boils at a temperature of,Water boils at a temperature of...,0.71609205,1.0200873362445415,206.4972375690608,,0.8765,32
+Mistral-7B,RMSNorm,Inertia,Factual,1,The largest planet in our solar system is,The largest planet in our solar system i...,4.803029,1.0178571428571428,173.24554776038855,J,0.09875,32
+Mistral-7B,RMSNorm,Inertia,Factual,1,The currency used in Japan is,The currency used in Japan is...,1.0820278,1.0332225913621262,173.0782608695652,the,0.7827,32
+Mistral-7B,RMSNorm,Inertia,Syntactic,5,"The agreement, which, notwithstanding the fact that it was signed only yesterday, effectively binds all parties immediately, stipulates that","The agreement, which, notwithstanding th...",4.827191,1.0863141524105755,225.06733794839522,the,0.3147,32
+Mistral-7B,RMSNorm,Inertia,Syntactic,5,"Although the weather was extremely cold, and despite the fact that they had no coats, the children decided to","Although the weather was extremely cold,...",3.5299141,0.9741564967695621,211.56638246041413,go,0.3115,32
+Mistral-7B,RMSNorm,Inertia,Syntactic,5,"The professor, having reviewed the complex derivation multiple times without finding the error, finally realized that","The professor, having reviewed the compl...",2.6487303,1.0282436010591351,167.92792792792793,the,0.3826,32
+Mistral-7B,RMSNorm,Inertia,Syntactic,5,To imply that such a fundamental shift in policy could occur without significant public debate is to suggest that,To imply that such a fundamental shift i...,4.302432,0.9641068447412354,157.0260223048327,the,0.3657,32
+Mistral-7B,RMSNorm,Inertia,Syntactic,5,"Not only did the experiment fail to yield the expected results, but it also demonstrated that the initial hypothesis was",Not only did the experiment fail to yiel...,2.4943848,1.0438946528332003,180.41379310344828,flaw,0.3113,32
+Mistral-7B,RMSNorm,Inertia,Cliche,2,The true meaning of happiness is often found in,The true meaning of happiness is often f...,3.5344467,1.032846715328467,158.61631089217295,the,0.4663,32
+Mistral-7B,RMSNorm,Inertia,Cliche,2,Actions speak louder than,Actions speak louder than...,0.33952677,1.0861640430820216,168.90588827377957,words,0.968,32
+Mistral-7B,RMSNorm,Inertia,Cliche,2,"It is what it is, and we must simply","It is what it is, and we must simply...",3.4742146,1.0145243282498184,139.15642023346302,accept,0.3577,32
+Mistral-7B,RMSNorm,Inertia,Cliche,2,Time heals all,Time heals all...,0.70320654,1.1323529411764706,157.47368421052633,wounds,0.903,32
+Mistral-7B,RMSNorm,Inertia,Cliche,2,"Life is a journey, not a","Life is a journey, not a...",0.7691265,1.0521472392638036,138.7172195892575,destination,0.8975,32
+Mistral-7B,RMSNorm,Inertia,Novel,4,The epistemological implications of quantum decoherence suggest that the observer is,The epistemological implications of quan...,4.351419,0.9739837398373984,175.95410212277682,not,0.1368,32
+Mistral-7B,RMSNorm,Inertia,Novel,4,"If consciousness creates reality, then the paradox of the unobserved electron implies","If consciousness creates reality, then t...",1.1337633,0.9853321829163072,111.84085692425401,that,0.8125,32
+Mistral-7B,RMSNorm,Inertia,Novel,4,The intersection of baroque architecture and cybernetic theory creates a space where,The intersection of baroque architecture...,5.6709633,1.0286599535243997,160.51369216241739,the,0.2306,32
+Mistral-7B,RMSNorm,Inertia,Novel,4,Calculating the trajectory of a hyperspace jump requires factoring in the variability of,Calculating the trajectory of a hyperspa...,4.022235,1.026122448979592,218.75730795377294,the,0.284,32
+Mistral-7B,RMSNorm,Inertia,Novel,4,The symbiotic relationship between fungal mycelium and digital neural networks results in,The symbiotic relationship between funga...,3.9347076,1.0700538876058507,203.68631940469376,a,0.3347,32
+Mistral-7B,RMSNorm,Inertia,Nonsense,3,Table sky run blue jump quickly under over,Table sky run blue jump quickly under ov...,7.2789817,1.5029527559055118,178.6617915904936,"
+",0.0579,32
+Mistral-7B,RMSNorm,Inertia,Nonsense,3,Purple idea furiously sleep colorless green,Purple idea furiously sleep colorless gr...,2.5529113,1.5578583765112262,129.92048012003002,ideas,0.53,32
+Mistral-7B,RMSNorm,Inertia,Nonsense,3,Clock river dance potato seven fast,Clock river dance potato seven fast...,6.8644223,1.3239024390243903,136.66089693154996,"
+",0.0824,32
+Mistral-7B,RMSNorm,Inertia,Nonsense,3,Window eat loud tomorrow yellow under,Window eat loud tomorrow yellow under...,6.0541086,1.279049295774648,162.28970331588133,the,0.10583,32
+Mistral-7B,RMSNorm,Inertia,Nonsense,3,Fish bicycle logic cloud mountain swim,Fish bicycle logic cloud mountain swim...,5.763484,1.2602739726027397,138.21596244131456,"
+",0.1968,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Factual,1,The capital city of France is,The capital city of France is...,4.1027474,1.4199584199584199,100.48735632183909, a,0.1658,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Factual,1,The atomic number of oxygen is,The atomic number of oxygen is...,1.1029315,1.4140773620798985,85.05363528009535, ,0.8164,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Factual,1,Water boils at a temperature of,Water boils at a temperature of...,1.408613,1.3708281829419036,77.40021810250818, ,0.775,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Factual,1,The largest planet in our solar system is,The largest planet in our solar system i...,3.1114092,1.5102266445550028,101.5377468060395, Jupiter,0.514,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Factual,1,The currency used in Japan is,The currency used in Japan is...,1.1281254,1.4405594405594406,89.4841628959276, the,0.7466,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Syntactic,5,"The agreement, which, notwithstanding the fact that it was signed only yesterday, effectively binds all parties immediately, stipulates that","The agreement, which, notwithstanding th...",4.8474174,1.4692348849652221,106.77035236938032, the,0.347,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Syntactic,5,"Although the weather was extremely cold, and despite the fact that they had no coats, the children decided to","Although the weather was extremely cold,...",3.9584036,1.378509196515005,96.79872543813065, go,0.2612,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Syntactic,5,"The professor, having reviewed the complex derivation multiple times without finding the error, finally realized that","The professor, having reviewed the compl...",2.8732069,1.3904982618771726,88.68360277136259, the,0.359,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Syntactic,5,To imply that such a fundamental shift in policy could occur without significant public debate is to suggest that,To imply that such a fundamental shift i...,4.4665513,1.3428258488499452,87.18222222222222, the,0.34,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Syntactic,5,"Not only did the experiment fail to yield the expected results, but it also demonstrated that the initial hypothesis was",Not only did the experiment fail to yiel...,1.7609602,1.1673239436619718,75.04697226938313, incorrect,0.563,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Cliche,2,The true meaning of happiness is often found in,The true meaning of happiness is often f...,3.0032327,1.3957219251336899,93.42281879194631, the,0.5366,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Cliche,2,Actions speak louder than,Actions speak louder than...,0.88808966,1.5201793721973094,80.50463821892393, words,0.9087,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Cliche,2,"It is what it is, and we must simply","It is what it is, and we must simply...",3.6972508,1.4410876132930515,75.68925619834711, accept,0.342,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Cliche,2,Time heals all,Time heals all...,1.0810019,1.5294117647058822,83.28164867517174, wounds,0.8564,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Cliche,2,"Life is a journey, not a","Life is a journey, not a...",0.65901476,1.3437978560490047,64.25629290617849, destination,0.9126,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Novel,4,The epistemological implications of quantum decoherence suggest that the observer is,The epistemological implications of quan...,4.383278,1.3355119825708062,92.58289085545722, not,0.1318,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Novel,4,"If consciousness creates reality, then the paradox of the unobserved electron implies","If consciousness creates reality, then t...",1.33682,1.3059154929577466,66.94584837545126, that,0.775,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Novel,4,The intersection of baroque architecture and cybernetic theory creates a space where,The intersection of baroque architecture...,5.651355,1.473135106937924,89.60634605850272, the,0.2344,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Novel,4,Calculating the trajectory of a hyperspace jump requires factoring in the variability of,Calculating the trajectory of a hyperspa...,4.3171268,1.3741573033707866,85.58993985784582, the,0.266,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Novel,4,The symbiotic relationship between fungal mycelium and digital neural networks results in,The symbiotic relationship between funga...,3.9198837,1.5379098360655739,102.74224598930482, a,0.343,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Nonsense,3,Table sky run blue jump quickly under over,Table sky run blue jump quickly under ov...,7.3447576,1.795020266357846,101.17287098419173, the,0.05872,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Nonsense,3,Purple idea furiously sleep colorless green,Purple idea furiously sleep colorless gr...,3.91662,1.9281842818428185,71.71023622047244, ideas,0.4067,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Nonsense,3,Clock river dance potato seven fast,Clock river dance potato seven fast...,7.065116,1.6367041198501873,64.74074074074075, food,0.07825,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Nonsense,3,Window eat loud tomorrow yellow under,Window eat loud tomorrow yellow under...,7.1442666,1.7707462686567164,90.39238095238095, the,0.0962,32
+LLaMA-3.1-8B,RMSNorm,Dampener,Nonsense,3,Fish bicycle logic cloud mountain swim,Fish bicycle logic cloud mountain swim...,7.175366,1.8210590383444918,77.65125709651257,"
+",0.09283,32

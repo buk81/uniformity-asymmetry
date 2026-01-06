@@ -1,0 +1,5 @@
+Model,Lab,Behavior,Gain,Heads,Layers,L* apriori,L* empirical,Mean Trace,Mean Trace (MH)
+pythia-160m,EleutherAI,DAMPEN,1.157,12,12,9.9,7,3821.34,18887.43
+pythia-410m,EleutherAI,DAMPEN,0.978,16,24,10.7,16,175.68,11325.83
+opt-125m,Meta,EXPAND,1.263,12,12,11.2,8,183.82,2367.53
+gpt2,OpenAI,EXPAND,1.05,12,12,7.5,9,4603.44,62695.87
