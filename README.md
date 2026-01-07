@@ -216,9 +216,9 @@ ots verify timestamps/paper3_sheaf_theory_20260104.tar.gz.ots
 
 ## Post-Publication Updates
 
-### Neutral Statement Control Test (2026-01-05)
+### Neutral Statement Control Test (2026-01-05) — Paper #1
 
-Following community feedback (thanks Kevin!), we ran a control test comparing neutral vs political statement pairs:
+Following community feedback on the uniformity asymmetry metric (thanks Kevin!), we ran a control test comparing neutral vs political statement pairs:
 
 | Category | Mean Asymmetry | Result |
 |----------|----------------|--------|
