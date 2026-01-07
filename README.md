@@ -6,7 +6,7 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buk81/uniformity-asymmetry/blob/main/notebooks/Uniformity_Asymmetry_Validation.ipynb)
 
 **Author:** Davide D'Elia
-**Release:** v3.0 (2026-01-06)
+**Release:** v3.1 (2026-01-07)
 
 ---
 
@@ -89,23 +89,23 @@ uniformity-asymmetry/
 │   ├── Thermodynamic_Constraints_DElia_2026.pdf
 │   ├── README.md                          # Paper 3 guide
 │   ├── ARTIFACT_MAP.md                    # Artifact ↔ Notebook mapping
-│   ├── Figures/                           # Main paper figures
+│   ├── Figures/                           # 9 paper figures (Fig 1-3 + A1-A5)
 │   ├── notebooks/                         # 18 core experiment notebooks
 │   └── Results/                           # JSONs, PNGs (see ARTIFACT_MAP.md)
 │
-├── notebooks/                             # Papers 1-2 notebooks
+├── notebooks/                             # Papers 1-2 notebooks (7 notebooks)
 │   ├── Uniformity_Asymmetry_Validation.ipynb
 │   ├── Bootstrap_CI_Layer_Analysis.ipynb
 │   └── ...
 │
-├── results/                               # Papers 1-2 results
+├── Results/                               # Papers 1-2 results
 │   ├── pythia/, llama/, gemma/, apertus/
 │   └── CONSOLIDATED_RESULTS.csv
 │
 ├── timestamps/                            # Bitcoin blockchain proofs
 │   ├── paper1_20251231.tar.gz.ots
 │   ├── paper2_20260104.zip.ots
-│   └── paper3_20260106.tar.gz.ots
+│   └── paper3_sheaf_theory_20260104.tar.gz.ots
 │
 └── extended_results/                      # Post-paper validation
 ```
@@ -123,6 +123,16 @@ uniformity-asymmetry/
 1. Open `notebooks/Bootstrap_CI_Layer_Analysis.ipynb` for Pythia
 2. Or `notebooks/Llama3_Cross_Model_Validation.ipynb` for Llama
 3. Results include layer-wise correlations with bootstrap CIs
+
+### Paper #3: Thermodynamic Constraints
+1. See `paper3/README.md` for detailed notebook → claim mapping
+2. **5 Core Notebooks:**
+   - `Scaling_Law_Multi_Pythia.ipynb` → Kleiber's Law (Fig. 1)
+   - `Grand_Unified_Thermodynamic_Benchmark.ipynb` → Training Heritage (Fig. 2)
+   - `Restriction_Maps_Extraction.ipynb` → Spectral Signature (Fig. 3)
+   - `Twin_Test_Base_vs_Instruct.ipynb` → RLHF Invariance (§5.5)
+   - `High_Rho_Model_Hunt_NO_FINAL_LN.ipynb` → Dimensional Crowding (§5.4)
+3. All experiments use `PYTHONHASHSEED=42` for reproducibility
 
 ---
 
@@ -192,13 +202,14 @@ All papers are timestamped on the Bitcoin blockchain via [OpenTimestamps](https:
 |-------|----------------|------|
 | #1 | `timestamps/paper1_20251231.tar.gz.ots` | 2025-12-31 |
 | #2 | `timestamps/paper2_20260104.zip.ots` | 2026-01-04 |
-| #3 | `paper3/timestamps/*.ots` | 2026-01-06 |
+| #3 | `timestamps/paper3_sheaf_theory_20260104.tar.gz.ots` | 2026-01-04 |
 
 **Verify:**
 ```bash
 pip install opentimestamps-client
 ots verify timestamps/paper1_20251231.tar.gz.ots
 ots verify timestamps/paper2_20260104.zip.ots
+ots verify timestamps/paper3_sheaf_theory_20260104.tar.gz.ots
 ```
 
 ---
@@ -216,7 +227,7 @@ Following community feedback (thanks Kevin!), we ran a control test comparing ne
 
 **Key Finding:** The metric measures **embedding-space structural differences**, not "bias" per se. Political opposites are semantically CLOSE (same topic) → low asymmetry. Different factual statements can be semantically FAR → variable asymmetry.
 
-**Full analysis:** `results/NEUTRAL_CONTROL_TEST_ANALYSIS.md`
+**Full analysis:** `Results/neutral_control_test_results.json`
 
 ---
 
@@ -232,4 +243,4 @@ MIT License
 
 ---
 
-*Release v3.0 — 2026-01-06*
+*Release v3.1 — 2026-01-07*
