@@ -49,6 +49,24 @@ paper3/thermodynamic_constraints_arxiv.zip
 paper3/Figures/fig_a6_beautiful_ones.png
 paper3/Figures/fig_a7_anisotropy_phases.png
 
+# Paper 3 - Internal/Draft files (NEVER publish)
+paper3/PAPER_3_DRAFT.md
+paper3/PAPER_3_OUTLINE.md
+paper3/OPEN_POINTS_RESOLUTION.md
+paper3/FIGURE_DESIGN_PROMPT.md
+paper3/FIGURE_IMPLEMENTATION_PROMPT.md
+paper3/GEMINI_DEEP_RESEARCH_PROMPT.md
+paper3/GEMINI_RESEARCH_RESULTS.md
+paper3/Research/GEMINI_PYTHIA_ANOMALY_RESEARCH.md
+paper3/notebooks/AI_COLLAB_L_STAR_FORMULA.md
+paper3/notebooks/L_STAR_FORMULA_FINAL.md
+paper3/notebooks/L_STAR_FORMULA_V3_RESULT.md
+paper3/notebooks/SECOND_OPINION_L_STAR_PROMPT.md
+paper3/THEOREM_4_1_PROOF_SKETCH.md
+paper3/THEOREM_4_1_HODGE_PROOF.md
+paper3/submission/
+paper3/sections/
+
 # Temporary/generated
 *.pyc
 __pycache__/
