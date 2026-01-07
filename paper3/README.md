@@ -14,7 +14,7 @@ This folder contains all materials for Paper #3 in the Transformer Dynamics Rese
 |----------|----------|
 | **PDF** | `Thermodynamic_Constraints_DElia_2026.pdf` |
 | **Figures** | `Figures/` (8 main figures) |
-| **Notebooks** | `notebooks/` (20 core experiments) |
+| **Notebooks** | `notebooks/` (18 core experiments) |
 | **Results** | `Results/` (JSONs, PNGs) |
 | **Artifact Map** | `ARTIFACT_MAP.md` |
 
@@ -46,23 +46,21 @@ This table maps each major claim in the paper to the notebook(s) that validate i
 | **§5.5** | RLHF Invariance (Twin Test) | `Twin_Test_Base_vs_Instruct.ipynb` |
 | **§5.6** | Mistral Paradox | `Mistral_Paradox_Investigation.ipynb` |
 | **Appendix A** | OPT Anomaly Investigation | `OPT_Anomaly_Investigation.ipynb` |
-| **Appendix B (Fig. A5)** | Sheaf Laplacian Trace Proxy | `Restriction_Maps_Extraction.ipynb`, `H4_Sheaf_Laplacian_Spectral_Validation.ipynb` |
-| **Appendix C (Fig. A7)** | 5-Phase Anisotropy Structure | `Anisotropy_Profile_Pythia.ipynb`, `Anisotropy_Profile_Gemma.ipynb` |
+| **Appendix B (Fig. A5)** | Sheaf Laplacian Trace Proxy | `Restriction_Maps_Extraction.ipynb`, `H4_v2_Extended_Models.ipynb` |
 | **Fig. A1** | Layer Dynamics | `Clean_Residual_Gain_NO_FINAL_LN.ipynb` |
-| **Fig. A2** | L* Validation | `L_Star_Cross_Heritage_Validation.ipynb`, `Improved_L_Star_Formula.ipynb` |
+| **Fig. A2** | L* Validation | `L_Star_Cross_Heritage_SignChange.ipynb` |
 | **Fig. A3** | Pythia Scaling | `Pythia_Family_Residual_Gain_Sweep.ipynb` |
 | **Fig. A4** | Input Robustness | `Input_Dependency_Thermodynamics.ipynb` |
 
 ---
 
-## All 20 Core Notebooks
+## All 18 Core Notebooks
 
 | Category | Notebooks |
 |----------|-----------|
 | **Core Validation** | `4Model_Cross_Architecture_Validation`, `Grand_Unified_Thermodynamic_Benchmark` |
 | **Scaling Laws** | `Scaling_Law_Multi_Pythia`, `Pythia_Family_Residual_Gain_Sweep`, `High_Rho_Model_Hunt_NO_FINAL_LN` |
 | **Sheaf Theory** | `Restriction_Maps_Extraction`, `H4_v2_Extended_Models` |
-| **Per-Head Analysis** | `Anisotropy_Profile_Pythia`, `Anisotropy_Profile_Gemma` |
 | **Architecture Tests** | `GPT2_LayerNorm_Validation`, `GPTJ_Parallel_Architecture_Test`, `FFN_Expansion_Analysis` |
 | **Anomaly Investigations** | `OPT_Anomaly_Investigation`, `Mistral_Paradox_Investigation`, `Hypothesis_Tests_LLaMA_Anomaly` |
 | **Twin Tests** | `Twin_Test_Base_vs_Instruct` |
@@ -85,7 +83,7 @@ pip install torch transformers numpy scipy matplotlib seaborn
 2. **`Grand_Unified_Thermodynamic_Benchmark.ipynb`** → Training Heritage (Fig. 2)
 3. **`Restriction_Maps_Extraction.ipynb`** → Spectral Signature (Fig. 3)
 4. **`Twin_Test_Base_vs_Instruct.ipynb`** → RLHF Invariance (§5.5)
-5. **`Anisotropy_Profile_Pythia.ipynb`** → 5-Phase Structure (Fig. A7)
+5. **`High_Rho_Model_Hunt_NO_FINAL_LN.ipynb`** → Dimensional Crowding (§5.4)
 
 ### Reproducibility
 All experiments use `PYTHONHASHSEED=42` for deterministic results.
@@ -106,7 +104,7 @@ See `ARTIFACT_MAP.md` for complete mapping of:
 | `scaling_law_multi_pythia_*.json` | Scaling_Law_Multi_Pythia | Fig. 1 |
 | `twin_test_results_*.json` | Twin_Test_Base_vs_Instruct | §5.5 |
 | `restriction_maps_results.json` | Restriction_Maps_Extraction | Fig. A5 |
-| `anisotropy_profile_pythia.png` | Anisotropy_Profile_Pythia | Fig. A7 |
+| `high_rho_hunt_NO_FINAL_LN_*.json` | High_Rho_Model_Hunt_NO_FINAL_LN | §5.4 |
 
 ---
 
@@ -128,7 +126,7 @@ paper3/
 │   ├── 4Model_Cross_Architecture_Validation.ipynb
 │   ├── Scaling_Law_Multi_Pythia.ipynb
 │   ├── Twin_Test_Base_vs_Instruct.ipynb
-│   └── ... (20 core notebooks)
+│   └── ... (18 core notebooks)
 │
 └── Results/                                   # JSON results + plots
     ├── *.json                                 # Raw measurements

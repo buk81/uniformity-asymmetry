@@ -21,9 +21,6 @@ This document maps each artifact (JSON/PNG) to the notebook that produces it.
 | `4model_validation_results.json` | 4Model_Cross_Architecture_Validation | core | |
 | `4model_validation_plot.png` | 4Model_Cross_Architecture_Validation | core | |
 | `4model_cumulative_energy.png` | 4Model_Cross_Architecture_Validation | core | |
-| `anisotropy_results_pythia.json` | Anisotropy_Profile_Pythia | core | Fig. A7 |
-| `anisotropy_profile_pythia.png` | Anisotropy_Profile_Pythia | core | |
-| `anisotropy_results_gemma.json` | Anisotropy_Profile_Gemma | core | |
 | `mistral_paradox_investigation_*.json` | Mistral_Paradox_Investigation | core | §5.6 |
 | `OPT_anomaly_*.json` | OPT_Anomaly_Investigation | core | Appendix A |
 | `gpt2_layernorm_validation_*.json` | GPT2_LayerNorm_Validation | core | |
@@ -34,13 +31,12 @@ This document maps each artifact (JSON/PNG) to the notebook that produces it.
 
 ---
 
-## Superseded/Obsolete Artifacts
+## Historical Notes (removed from repo)
 
-| Artifact | Status | Notes |
-|---|---|---|
-| `high_rho_model_hunt_*.json` | obsolete | LayerNorm artifact |
-| `pythia_family_residual_gain_*.json` | obsolete | Superseded by NO_FINAL_LN version |
-| `rlhf_safety_brake_test_results.json` | rejected | Not used in paper |
+The following artifacts were generated during development but removed as obsolete:
+- `high_rho_model_hunt_*.json` - LayerNorm artifact, superseded by NO_FINAL_LN
+- `pythia_family_residual_gain_*.json` - Superseded by NO_FINAL_LN version
+- `rlhf_safety_brake_test_results.json` - Hypothesis rejected, not used in paper
 
 ---
 
@@ -63,8 +59,6 @@ This document maps each artifact (JSON/PNG) to the notebook that produces it.
 | Restriction_Maps_Extraction | `restriction_maps_results.json`, `sheaf_laplacian_spectral.png` |
 | Twin_Test_Base_vs_Instruct | `twin_test_results_*.{json,png}` |
 | 4Model_Cross_Architecture_Validation | `4model_*.{json,png}` |
-| Anisotropy_Profile_Pythia | `anisotropy_*_pythia.{json,png}` |
-| Anisotropy_Profile_Gemma | `anisotropy_*_gemma.{json,png}` |
 | Mistral_Paradox_Investigation | `mistral_paradox_*.{json,png}` |
 | OPT_Anomaly_Investigation | `OPT_anomaly_*.{json,png}` |
 | GPT2_LayerNorm_Validation | `gpt2_layernorm_*.{json,png}` |
@@ -73,7 +67,7 @@ This document maps each artifact (JSON/PNG) to the notebook that produces it.
 | H4_v2_Extended_Models | `H4_*.{json,csv,png}` |
 | Hypothesis_Tests_LLaMA_Anomaly | `llama_anomaly_*.json` |
 | FFN_Expansion_Analysis | `ffn_expansion_*.{json,png}` |
-| Bentov_Point_Characterization | `bentov_point_*` |
+| Bentov_Point_Characterization | `BENTOV_POINT_DISCOVERY.md` (theoretical framework, uses benchmark data) |
 
 ---
 

@@ -71,11 +71,17 @@ paper3/sections/
 paper3/generate_*.py
 paper3/Figures/generate_*.py
 
-# Paper 3 - Beautiful Ones (arXiv-only, not in Zenodo version)
+# Paper 3 - arXiv-only additions (not in Zenodo version)
 paper3/notebooks/Beautiful_Ones_Per_Head_Analysis.ipynb
 paper3/Results/beautiful_ones_*.json
 paper3/Results/beautiful_ones_*.png
 paper3/Results/residual_growth_profile.png
+paper3/notebooks/Anisotropy_Profile_*.ipynb
+paper3/Results/anisotropy_*.json
+paper3/Results/anisotropy_*.png
+paper3/Results/eigenvalue_spectrum_*.png
+paper3/Results/norm_analysis_*.png
+paper3/Results/ANISOTROPY_*.md
 
 # Paper 3 - Internal research/backup
 paper3/Research/
