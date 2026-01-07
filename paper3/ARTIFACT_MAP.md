@@ -67,7 +67,11 @@ The following artifacts were generated during development but removed as obsolet
 | H4_v2_Extended_Models | `H4_*.{json,csv,png}` |
 | Hypothesis_Tests_LLaMA_Anomaly | `llama_anomaly_*.json` |
 | FFN_Expansion_Analysis | `ffn_expansion_*.{json,png}` |
-| Bentov_Point_Characterization | `BENTOV_POINT_DISCOVERY.md` (theoretical framework, uses benchmark data) |
+| Bentov_Point_Characterization | `BENTOV_POINT_DISCOVERY.md` (theoretical framework) |
+| Clean_Residual_Gain_NO_FINAL_LN | `clean_residual_NO_FINAL_LN_*.json` (Fig. A1) |
+| High_Rho_Model_Hunt_NO_FINAL_LN | `high_rho_hunt_NO_FINAL_LN_*.json` (§5.4) |
+| Pythia_Family_Residual_Gain_Sweep | `pythia_family_NO_FINAL_LN_*.json` (Fig. A3) |
+| Input_Dependency_Thermodynamics | `input_dependency_thermodynamics.json` (Fig. A4) |
 
 ---
 

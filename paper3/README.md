@@ -13,7 +13,7 @@ This folder contains all materials for Paper #3 in the Transformer Dynamics Rese
 | Resource | Location |
 |----------|----------|
 | **PDF** | `Thermodynamic_Constraints_DElia_2026.pdf` |
-| **Figures** | `Figures/` (8 main figures) |
+| **Figures** | `Figures/` (9 figures: Fig 1-3 + A1-A5 + combined) |
 | **Notebooks** | `notebooks/` (18 core experiments) |
 | **Results** | `Results/` (JSONs, PNGs) |
 | **Artifact Map** | `ARTIFACT_MAP.md` |
@@ -26,7 +26,7 @@ This folder contains all materials for Paper #3 in the Transformer Dynamics Rese
 |-----|---------|----------|
 | **Kleiber's Law** | G_max = 10^(1/L) | r = -0.81, p = 0.014 |
 | **Training Heritage** | Lab determines thermodynamic sign | EleutherAI: dampening, Meta/OpenAI: expansion |
-| **Spectral Signature** | \|\|W_V\|\|/\|\|W_O\|\| predicts behavior | 10× magnitude differences |
+| **Spectral Signature** | ‖W_V‖/‖W_O‖ ratio predicts behavior | 10× magnitude differences |
 
 **Core Finding:** Heritage > Geometry > Scale
 
@@ -41,7 +41,7 @@ This table maps each major claim in the paper to the notebook(s) that validate i
 | **§4 (Fig. 1)** | Kleiber's Law: G_max = 10^(1/L) | `Scaling_Law_Multi_Pythia.ipynb` |
 | **§5.1 (Fig. 2)** | Cross-architecture benchmark (23+ models) | `Grand_Unified_Thermodynamic_Benchmark.ipynb`, `4Model_Cross_Architecture_Validation.ipynb` |
 | **§5.2** | Training Heritage dominates | `Grand_Unified_Thermodynamic_Benchmark.ipynb` |
-| **§5.3 (Fig. 3)** | Spectral Signature: \|\|W_V\|\|/\|\|W_O\|\| | `Restriction_Maps_Extraction.ipynb` |
+| **§5.3 (Fig. 3)** | Spectral Signature: ‖W_V‖/‖W_O‖ | `Restriction_Maps_Extraction.ipynb` |
 | **§5.4** | Dimensional Crowding (ρ = H/d_head) | `High_Rho_Model_Hunt_NO_FINAL_LN.ipynb` |
 | **§5.5** | RLHF Invariance (Twin Test) | `Twin_Test_Base_vs_Instruct.ipynb` |
 | **§5.6** | Mistral Paradox | `Mistral_Paradox_Investigation.ipynb` |
@@ -116,11 +116,12 @@ paper3/
 ├── README.md                                  # This file
 ├── ARTIFACT_MAP.md                            # Artifact ↔ Notebook mapping
 │
-├── Figures/                                   # Paper figures (8 main)
+├── Figures/                                   # Paper figures (9 total)
 │   ├── fig1_kleiber_law.png
 │   ├── fig2_training_heritage.png
 │   ├── fig3_spectral_signature.png
-│   └── fig_a1-a5_*.png
+│   ├── fig_a1-a5_*.png                        # Appendix figures
+│   └── fig_combined.png                       # All figures combined
 │
 ├── notebooks/                                 # Experiment notebooks
 │   ├── 4Model_Cross_Architecture_Validation.ipynb

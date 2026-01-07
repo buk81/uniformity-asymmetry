@@ -87,6 +87,14 @@ paper3/Results/ANISOTROPY_*.md
 paper3/Research/
 paper3/Results/*_backup.json
 
+# Paper 3 - Internal analysis MDs (not needed for reproduction)
+paper3/Results/*_ANALYSIS.md
+paper3/Results/*_HYPOTHESES.md
+paper3/Results/*_INVESTIGATION.md
+paper3/Results/*_RESULTS.md
+paper3/Results/*_SOLVED.md
+paper3/Results/*_VALIDATION.md
+
 # Paper 3 - LaTeX sources (not public)
 paper3/latex/
 
