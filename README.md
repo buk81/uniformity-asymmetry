@@ -125,14 +125,15 @@ uniformity-asymmetry/
 3. Results include layer-wise correlations with bootstrap CIs
 
 ### Paper #3: Thermodynamic Constraints
-1. See `paper3/README.md` for detailed notebook → claim mapping
-2. **5 Core Notebooks:**
+1. **New to this?** Start with [`paper3/ELI5.md`](paper3/ELI5.md) for an intuitive explanation
+2. See `paper3/README.md` for detailed notebook → claim mapping
+3. **5 Core Notebooks:**
    - `Scaling_Law_Multi_Pythia.ipynb` → Kleiber's Law (Fig. 1)
    - `Grand_Unified_Thermodynamic_Benchmark.ipynb` → Training Heritage (Fig. 2)
    - `Restriction_Maps_Extraction.ipynb` → Spectral Signature (Fig. 3)
    - `Twin_Test_Base_vs_Instruct.ipynb` → RLHF Invariance (§5.5)
    - `High_Rho_Model_Hunt_NO_FINAL_LN.ipynb` → Dimensional Crowding (§5.4)
-3. All experiments use `PYTHONHASHSEED=42` for reproducibility
+4. All experiments use `PYTHONHASHSEED=42` for reproducibility
 
 ---
 
