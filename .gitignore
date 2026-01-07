@@ -67,6 +67,10 @@ paper3/THEOREM_4_1_HODGE_PROOF.md
 paper3/submission/
 paper3/sections/
 
+# Paper 3 - Figure generation scripts (internal)
+paper3/generate_*.py
+paper3/Figures/generate_*.py
+
 # Temporary/generated
 *.pyc
 __pycache__/
