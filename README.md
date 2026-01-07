@@ -89,7 +89,6 @@ uniformity-asymmetry/
 │   ├── Thermodynamic_Constraints_DElia_2026.pdf
 │   ├── README.md                          # Paper 3 guide
 │   ├── ARTIFACT_MAP.md                    # Artifact ↔ Notebook mapping
-│   ├── latex/                             # LaTeX sources
 │   ├── Figures/                           # Main paper figures
 │   ├── notebooks/                         # 33 experiment notebooks
 │   └── Results/                           # JSONs, PNGs (see ARTIFACT_MAP.md)

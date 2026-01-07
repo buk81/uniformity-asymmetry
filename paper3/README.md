@@ -13,8 +13,7 @@ This folder contains all materials for Paper #3 in the Transformer Dynamics Rese
 | Resource | Location |
 |----------|----------|
 | **PDF** | `Thermodynamic_Constraints_DElia_2026.pdf` |
-| **LaTeX** | `latex/thermodynamic_constraints.tex` |
-| **Figures** | `Figures/` (13 PNGs) |
+| **Figures** | `Figures/` (8 main figures) |
 | **Notebooks** | `notebooks/` (33 experiments) |
 | **Results** | `Results/` (JSONs, PNGs) |
 | **Artifact Map** | `ARTIFACT_MAP.md` |
@@ -120,12 +119,7 @@ paper3/
 ├── README.md                                  # This file
 ├── ARTIFACT_MAP.md                            # Artifact ↔ Notebook mapping
 │
-├── latex/                                     # LaTeX sources
-│   ├── thermodynamic_constraints.tex
-│   ├── references.bib
-│   └── neurips_2024.sty
-│
-├── Figures/                                   # Paper figures
+├── Figures/                                   # Paper figures (8 main)
 │   ├── fig1_kleiber_law.png
 │   ├── fig2_training_heritage.png
 │   ├── fig3_spectral_signature.png
@@ -137,11 +131,9 @@ paper3/
 │   ├── Twin_Test_Base_vs_Instruct.ipynb
 │   └── ... (33 notebooks total)
 │
-├── Results/                                   # JSON results + plots
-│   ├── *.json                                 # Raw measurements
-│   └── *.png                                  # Generated figures
-│
-└── timestamps/                                # OpenTimestamps proofs
+└── Results/                                   # JSON results + plots
+    ├── *.json                                 # Raw measurements
+    └── *.png                                  # Generated figures
 ```
 
 ---

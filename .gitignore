@@ -81,6 +81,9 @@ paper3/Results/residual_growth_profile.png
 paper3/Research/
 paper3/Results/*_backup.json
 
+# Paper 3 - LaTeX sources (not public)
+paper3/latex/
+
 # Temporary/generated
 *.pyc
 __pycache__/
