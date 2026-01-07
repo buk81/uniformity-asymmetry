@@ -82,8 +82,5 @@ Quelle: PAPER_3_PROTOCOL.md (Kanon). Dieses Dokument listet alle explizit refere
 - Clean_Residual_Gain_NO_FINAL_LN.ipynb → clean_residual_NO_FINAL_LN_20260105_173546.{json,png}
 - Pythia_Family_Residual_Gain_Sweep.ipynb / High_Rho_Model_Hunt(_NO_FINAL_LN).ipynb → pythia_family_NO_FINAL_LN_20260105_174820.json, high_rho_hunt_NO_FINAL_LN_20260105_184728.json
 
-## Hinweise
-- PAPER_3_PROTOCOL.md bleibt Quelle der Wahrheit. Dieses Mapping dient nur der Navigation für GitHub.
-- Obsolet/Rejected Artefakte nicht als “core” im Paper verwenden; ggf. in Appendix kennzeichnen.
-- Schwere ZIP/TGZ (z.B. *_results_*.zip) sind nicht gelistet; per LFS oder externe Links referenzieren.
+
 
