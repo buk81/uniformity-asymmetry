@@ -65,7 +65,7 @@ We found this follows a precise mathematical law:
 
 > The maximum amplification per layer decreases as models get deeper.
 
-It's eerily similar to Kleiber's Law in biology — how metabolic rate slows as animals get larger to prevent overheating. Transformers, it seems, have their own "physics."
+We call this "Kleiber-like" as a descriptive analogy — it's an empirical depth–gain constraint, not a claim about biology. But the parallel is striking: just as large animals must slow their metabolism to avoid overheating, deep transformers must dampen their gain to avoid signal explosion.
 
 ---
 
