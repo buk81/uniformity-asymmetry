@@ -71,6 +71,16 @@ paper3/sections/
 paper3/generate_*.py
 paper3/Figures/generate_*.py
 
+# Paper 3 - Beautiful Ones (arXiv-only, not in Zenodo version)
+paper3/notebooks/Beautiful_Ones_Per_Head_Analysis.ipynb
+paper3/Results/beautiful_ones_*.json
+paper3/Results/beautiful_ones_*.png
+paper3/Results/residual_growth_profile.png
+
+# Paper 3 - Internal research/backup
+paper3/Research/
+paper3/Results/*_backup.json
+
 # Temporary/generated
 *.pyc
 __pycache__/
