@@ -13,6 +13,7 @@ This folder contains all materials for Paper #3 in the Transformer Dynamics Rese
 | Resource | Location |
 |----------|----------|
 | **PDF** | `Thermodynamic_Constraints_DElia_2026.pdf` |
+| **ELI5** | `ELI5.md` (intuitive explanation) |
 | **Figures** | `Figures/` (9 figures: Fig 1-3 + A1-A5 + combined) |
 | **Notebooks** | `notebooks/` (18 core experiments) |
 | **Results** | `Results/` (JSONs, PNGs) |
