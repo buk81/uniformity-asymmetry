@@ -90,7 +90,7 @@ uniformity-asymmetry/
 │   ├── README.md                          # Paper 3 guide
 │   ├── ARTIFACT_MAP.md                    # Artifact ↔ Notebook mapping
 │   ├── Figures/                           # Main paper figures
-│   ├── notebooks/                         # 33 experiment notebooks
+│   ├── notebooks/                         # 20 core experiment notebooks
 │   └── Results/                           # JSONs, PNGs (see ARTIFACT_MAP.md)
 │
 ├── notebooks/                             # Papers 1-2 notebooks

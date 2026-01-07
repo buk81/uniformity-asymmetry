@@ -14,7 +14,7 @@ This folder contains all materials for Paper #3 in the Transformer Dynamics Rese
 |----------|----------|
 | **PDF** | `Thermodynamic_Constraints_DElia_2026.pdf` |
 | **Figures** | `Figures/` (8 main figures) |
-| **Notebooks** | `notebooks/` (33 experiments) |
+| **Notebooks** | `notebooks/` (20 core experiments) |
 | **Results** | `Results/` (JSONs, PNGs) |
 | **Artifact Map** | `ARTIFACT_MAP.md` |
 
@@ -55,21 +55,20 @@ This table maps each major claim in the paper to the notebook(s) that validate i
 
 ---
 
-## All 33 Notebooks
+## All 20 Core Notebooks
 
 | Category | Notebooks |
 |----------|-----------|
-| **Core Validation** | `4Model_Cross_Architecture_Validation`, `Cross_Architecture_Validation`, `Grand_Unified_Thermodynamic_Benchmark` |
+| **Core Validation** | `4Model_Cross_Architecture_Validation`, `Grand_Unified_Thermodynamic_Benchmark` |
 | **Scaling Laws** | `Scaling_Law_Multi_Pythia`, `Pythia_Family_Residual_Gain_Sweep`, `High_Rho_Model_Hunt_NO_FINAL_LN` |
-| **Sheaf Theory** | `Restriction_Maps_Extraction`, `Restriction_Map_Spectral_Analysis`, `H4_Sheaf_Laplacian_Spectral_Validation`, `H4_v2_Extended_Models` |
+| **Sheaf Theory** | `Restriction_Maps_Extraction`, `H4_v2_Extended_Models` |
 | **Per-Head Analysis** | `Anisotropy_Profile_Pythia`, `Anisotropy_Profile_Gemma` |
-| **Architecture Tests** | `GPT2_LayerNorm_Validation`, `GPTJ_Parallel_Architecture_Test`, `Vision_Transformer_Test`, `FFN_Expansion_Analysis`, `FFN_Expansion_Pythia6.9B` |
-| **Anomaly Investigations** | `OPT_Anomaly_Investigation`, `Mistral_Paradox_Investigation`, `Hypothesis_Tests_LLaMA_Anomaly`, `LLaMA2_vs_LLaMA3_Long_Context_Test` |
-| **Twin Tests** | `Twin_Test_Base_vs_Instruct`, `RLHF_Safety_Brake_Test` |
-| **L* Formula** | `L_Star_Cross_Heritage_Validation`, `L_Star_Cross_Heritage_SignChange`, `Improved_L_Star_Formula` |
-| **Robustness** | `Input_Dependency_Thermodynamics`, `Neutral_Statement_Control_Test` |
-| **Clean Metrics** | `Clean_Residual_Gain_Validation`, `Clean_Residual_Gain_NO_FINAL_LN` |
-| **Special** | `Bentov_Point_Characterization`, `High_Rho_Model_Hunt` |
+| **Architecture Tests** | `GPT2_LayerNorm_Validation`, `GPTJ_Parallel_Architecture_Test`, `FFN_Expansion_Analysis` |
+| **Anomaly Investigations** | `OPT_Anomaly_Investigation`, `Mistral_Paradox_Investigation`, `Hypothesis_Tests_LLaMA_Anomaly` |
+| **Twin Tests** | `Twin_Test_Base_vs_Instruct` |
+| **L* Formula** | `L_Star_Cross_Heritage_SignChange` |
+| **Robustness** | `Input_Dependency_Thermodynamics`, `Clean_Residual_Gain_NO_FINAL_LN` |
+| **Special** | `Bentov_Point_Characterization` |
 
 ---
 
@@ -129,7 +128,7 @@ paper3/
 │   ├── 4Model_Cross_Architecture_Validation.ipynb
 │   ├── Scaling_Law_Multi_Pythia.ipynb
 │   ├── Twin_Test_Base_vs_Instruct.ipynb
-│   └── ... (33 notebooks total)
+│   └── ... (20 core notebooks)
 │
 └── Results/                                   # JSON results + plots
     ├── *.json                                 # Raw measurements
