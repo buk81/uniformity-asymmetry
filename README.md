@@ -60,7 +60,7 @@ This repository contains code, data, and reproducibility materials for three rel
 |-----|---------|----------|
 | **Kleiber's Law** | G_max = 10^(1/L) | r = -0.81, p = 0.014 (Pythia family) |
 | **Training Heritage** | Lab determines thermodynamic sign | EleutherAI: 80% dampening vs. Meta/OpenAI: 100% expansion |
-| **Spectral Signature** | ||W_V||/||W_O|| predicts behavior | 10× magnitude differences between labs |
+| **Spectral Signature** | ‖W_V‖/‖W_O‖ ratio predicts behavior | 10× magnitude differences between labs |
 
 **Additional Contributions:**
 - **Sheaf Laplacian Validation:** GPT-2 exhibits 26× higher trace proxy than OPT-125m
