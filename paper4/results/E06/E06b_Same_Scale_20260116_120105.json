@@ -1,0 +1,274 @@
+{
+  "experiment": "E06b_Same_Scale_MHA_vs_GQA",
+  "version": "1.0_RERUN_v3",
+  "timestamp": "20260116_120105",
+  "seed": 123,
+  "noise_levels": [
+    0.0,
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "test_prompts": [
+    "The meaning of life is",
+    "In the beginning, there was",
+    "The most important thing about",
+    "Scientists have discovered that",
+    "Once upon a time in a"
+  ],
+  "test_prompts_md5": "9ff555afc37041ed0c3e376935744260",
+  "metrics": [
+    "PPL-Slope",
+    "PIEV",
+    "Attention-Entropy"
+  ],
+  "purpose": "Isolate architecture effect (MHA vs GQA) from size effect",
+  "hypothesis": "GQA (4:1 KV sharing) amplifies noise more than MHA (1:1)",
+  "models": {
+    "llama2_7b": {
+      "name": "meta-llama/Llama-2-7b-hf",
+      "architecture": "MHA",
+      "query_heads": 32,
+      "kv_heads": 32,
+      "kv_ratio": "1:1",
+      "expected": "BASELINE",
+      "reason": "Standard MHA architecture (no KV sharing)",
+      "ppl_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 2.3534327268600466,
+          "std": 0.34333713228013724
+        },
+        {
+          "sigma": 0.01,
+          "mean": 2.8325638294219972,
+          "std": 0.44344652690701003
+        },
+        {
+          "sigma": 0.02,
+          "mean": 18.1875207901001,
+          "std": 8.472125080926823
+        },
+        {
+          "sigma": 0.05,
+          "mean": 56.9774263381958,
+          "std": 88.40462905387871
+        },
+        {
+          "sigma": 0.1,
+          "mean": 11.202890777587891,
+          "std": 3.89162817680587
+        },
+        {
+          "sigma": 0.2,
+          "mean": 43.74582977294922,
+          "std": 43.52413004427596
+        }
+      ],
+      "ppl_slope": {
+        "slope": 156.9616475275585,
+        "intercept": 12.609039695773806,
+        "r_squared": 0.2763999721762728,
+        "p_value": 0.2840505961942484
+      },
+      "baseline_ppl": 2.3534327268600466,
+      "entropy_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 4.907492446899414,
+          "piev": 0.0
+        },
+        {
+          "sigma": 0.01,
+          "mean": 4.955399656295777,
+          "piev": 0.009762054636809667
+        },
+        {
+          "sigma": 0.02,
+          "mean": 6.366728019714356,
+          "piev": 0.2973485112008469
+        },
+        {
+          "sigma": 0.05,
+          "mean": 7.128700256347656,
+          "piev": 0.4526156348649331
+        },
+        {
+          "sigma": 0.1,
+          "mean": 6.722009754180908,
+          "piev": 0.36974428935248144
+        },
+        {
+          "sigma": 0.2,
+          "mean": 7.550753116607666,
+          "piev": 0.5386173689127697
+        }
+      ],
+      "piev_slope": {
+        "slope": 1.9319485053846546,
+        "r_squared": 0.5499844319783331
+      },
+      "baseline_entropy": 4.907492446899414,
+      "max_piev": 0.5386173689127697,
+      "attn_entropy_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 0.27638597707264123
+        },
+        {
+          "sigma": 0.01,
+          "mean": 0.27638597707264123
+        },
+        {
+          "sigma": 0.02,
+          "mean": 0.27638597707264123
+        },
+        {
+          "sigma": 0.05,
+          "mean": 0.27638597707264123
+        },
+        {
+          "sigma": 0.1,
+          "mean": 0.27638597707264123
+        },
+        {
+          "sigma": 0.2,
+          "mean": 0.27638597707264123
+        }
+      ],
+      "attn_entropy_slope": {
+        "slope": 0.0,
+        "r_squared": 0.0
+      },
+      "baseline_attn_entropy": 0.27638597707264123,
+      "quadrant": "COMPLETE FRAGILITY"
+    },
+    "mistral_7b": {
+      "name": "mistralai/Mistral-7B-v0.1",
+      "architecture": "GQA",
+      "query_heads": 32,
+      "kv_heads": 8,
+      "kv_ratio": "4:1",
+      "expected": "MORE_FRAGILE",
+      "reason": "GQA with 4:1 KV sharing (noise amplification hypothesis)",
+      "ppl_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 2.5893940925598145,
+          "std": 0.36667006549218495
+        },
+        {
+          "sigma": 0.01,
+          "mean": 289.1335159301758,
+          "std": 165.02227078194838
+        },
+        {
+          "sigma": 0.02,
+          "mean": 751.4126678466797,
+          "std": 593.472487728721
+        },
+        {
+          "sigma": 0.05,
+          "mean": 11540.055859375,
+          "std": 7206.622708311534
+        },
+        {
+          "sigma": 0.1,
+          "mean": 54907.4640625,
+          "std": 9624.401061835297
+        },
+        {
+          "sigma": 0.2,
+          "mean": 69645.64140625,
+          "std": 10083.748034074419
+        }
+      ],
+      "ppl_slope": {
+        "slope": 391572.5206776039,
+        "intercept": -1943.543491915847,
+        "r_squared": 0.9119276502842826,
+        "p_value": 0.0029986673233856954
+      },
+      "baseline_ppl": 2.5893940925598145,
+      "entropy_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 4.868537282943725,
+          "piev": 0.0
+        },
+        {
+          "sigma": 0.01,
+          "mean": 6.19685640335083,
+          "piev": 0.27283741362332686
+        },
+        {
+          "sigma": 0.02,
+          "mean": 6.6147685050964355,
+          "piev": 0.35867676894873535
+        },
+        {
+          "sigma": 0.05,
+          "mean": 8.764803409576416,
+          "piev": 0.8002950167974974
+        },
+        {
+          "sigma": 0.1,
+          "mean": 9.449788284301757,
+          "piev": 0.9409912536580212
+        },
+        {
+          "sigma": 0.2,
+          "mean": 9.364501953125,
+          "piev": 0.9234733984542526
+        }
+      ],
+      "piev_slope": {
+        "slope": 3.241859564639973,
+        "r_squared": 0.620173877842793
+      },
+      "baseline_entropy": 4.868537282943725,
+      "max_piev": 0.9409912536580212,
+      "attn_entropy_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 0.3096867509186268
+        },
+        {
+          "sigma": 0.01,
+          "mean": 0.3096867509186268
+        },
+        {
+          "sigma": 0.02,
+          "mean": 0.3096867509186268
+        },
+        {
+          "sigma": 0.05,
+          "mean": 0.3096867509186268
+        },
+        {
+          "sigma": 0.1,
+          "mean": 0.3096867509186268
+        },
+        {
+          "sigma": 0.2,
+          "mean": 0.3096867509186268
+        }
+      ],
+      "attn_entropy_slope": {
+        "slope": 0.0,
+        "r_squared": NaN
+      },
+      "baseline_attn_entropy": 0.3096867509186268,
+      "quadrant": "COMPLETE FRAGILITY"
+    }
+  },
+  "architecture_analysis": {
+    "ppl_ratio": 2494.7019023156827,
+    "piev_ratio": 1.7470495902452357,
+    "hypothesis_ppl_confirmed": true,
+    "hypothesis_piev_confirmed": true
+  },
+  "verdict": "GQA_FRAGILITY_CONFIRMED"
+}

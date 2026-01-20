@@ -1,0 +1,148 @@
+{
+  "experiment": "E04_Twin_Test",
+  "variant": "LLaMA-3.1 GQA",
+  "timestamp": "20260113_210429",
+  "models": {
+    "base": "meta-llama/Llama-3.1-8B",
+    "instruct": "meta-llama/Llama-3.1-8B-Instruct",
+    "params": "8B",
+    "gqa_ratio": "4:1"
+  },
+  "reference_values": {
+    "mistral_mha_delta": 0.799,
+    "tinyllama_gqa_fragility": -0.262
+  },
+  "thresholds": {
+    "prober": 0.85,
+    "rigid": 0.2,
+    "fragile_gate": 0.05,
+    "antifragile_gate": -0.05
+  },
+  "noise_levels": [
+    0.0,
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "methodology": {
+    "standard": "E11-v3",
+    "seeds": [
+      42,
+      123,
+      456
+    ],
+    "max_length": 128,
+    "dtype": "torch.bfloat16",
+    "prompt_md5": "715065bab181f46bf12ed471951141e2",
+    "prompt_md5_verified": true,
+    "num_prompts": 10,
+    "prompt_set": "Standard-10 v3",
+    "quantization": "bfloat16",
+    "attention_mask_used": true,
+    "chat_template_base": false,
+    "chat_template_instruct": true
+  },
+  "results": {
+    "pair": "llama3",
+    "architecture": "GQA",
+    "gqa_ratio": "4:1",
+    "base": {
+      "phenotypes": {
+        "prober_pct": 0.40039062499999994,
+        "rigid_pct": 34.248046875,
+        "healthy_pct": 65.3515625,
+        "mean_entropy": 0.30795710197703946,
+        "std_entropy": 0.18602095718583644,
+        "n_heads": 10240,
+        "chat_template_used": false
+      },
+      "fragility": {
+        "fragility_score": -1.053770723562282,
+        "degradation_curve": [
+          [
+            0.0,
+            0.1815134133884134
+          ],
+          [
+            0.01,
+            0.22539156265900454
+          ],
+          [
+            0.02,
+            0.1674096467855435
+          ],
+          [
+            0.05,
+            0.0
+          ],
+          [
+            0.1,
+            0.0076923076923076875
+          ],
+          [
+            0.2,
+            0.0
+          ]
+        ],
+        "is_fragile": 0,
+        "is_antifragile": 1,
+        "is_neutral": 0,
+        "chat_template_used": false
+      }
+    },
+    "instruct": {
+      "phenotypes": {
+        "prober_pct": 0.380859375,
+        "rigid_pct": 0.15625,
+        "healthy_pct": 99.462890625,
+        "mean_entropy": 0.43507737686213777,
+        "std_entropy": 0.12363727847596238,
+        "n_heads": 10240,
+        "chat_template_used": true
+      },
+      "fragility": {
+        "fragility_score": 0.0,
+        "degradation_curve": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.01,
+            0.0
+          ],
+          [
+            0.02,
+            0.0
+          ],
+          [
+            0.05,
+            0.0
+          ],
+          [
+            0.1,
+            0.0
+          ],
+          [
+            0.2,
+            0.0
+          ]
+        ],
+        "is_fragile": 0,
+        "is_antifragile": 0,
+        "is_neutral": 1,
+        "chat_template_used": true
+      }
+    },
+    "verdict": {
+      "rlhf_damages_gqa": 1,
+      "gqa_less_damage_than_mha": 0,
+      "base_already_antifragile": 1,
+      "gqa_delta": 1.053770723562282,
+      "mha_delta": 0.799,
+      "verdict_text": "GQA DOES NOT PROTECT AGAINST RLHF"
+    }
+  }
+}

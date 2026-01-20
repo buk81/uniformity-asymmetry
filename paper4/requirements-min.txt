@@ -1,0 +1,18 @@
+# Paper 4: Alignment Robustness - Minimum Requirements
+# Loose version constraints for flexibility
+# Created: 2026-01-20
+
+# Core ML
+torch>=2.1.0
+transformers>=4.36.0
+accelerate>=0.25.0
+bitsandbytes>=0.41.0
+
+# Scientific computing
+scipy>=1.11.0
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Configuration and validation
+pyyaml>=6.0
+jsonschema>=4.20.0

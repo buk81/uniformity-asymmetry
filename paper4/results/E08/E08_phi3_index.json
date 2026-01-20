@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "experiment_id": "E08_phi3_alignment_density",
+  "description": "Phi-3 alignment density analysis",
+  "model": "microsoft/phi-3-mini-4k-instruct",
+  "key_findings": {
+    "si_mean": 0.33,
+    "si_std": 0.02,
+    "architecture": "Dense MLP with synthetic data training",
+    "immunity_hypothesis": "Synthetic training data creates uniform attention distribution"
+  },
+  "source_notebook": "../notebooks/A4_synthetic/E08_Phi3_Alignment_Density.ipynb",
+  "note": "Full results available in original ZIP files; this index summarizes key findings"
+}

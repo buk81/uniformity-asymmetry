@@ -1,0 +1,247 @@
+{
+  "experiment": "E22_Indra_Cure_v2",
+  "version": "2.1",
+  "timestamp": "20260116_231418",
+  "seed": 42,
+  "seed_idx": 0,
+  "pythonhashseed": "42",
+  "model_id": "meta-llama/Meta-Llama-3-8B",
+  "methodology": "E06d_compliant",
+  "methodology_note": "AttentionNoiseInjector + PPL of GENERATED text",
+  "purpose": "Test KV-Head Duplication as Indra Cure",
+  "v2_fix": {
+    "v1_bug": "Measured PPL of INPUT prompts instead of GENERATED text",
+    "v2_fix": "Now uses E06d methodology: AttentionNoiseInjector + PPL of generated"
+  },
+  "v21_improvements": {
+    "grok_review": "2026-01-17",
+    "oom_handling": "try/except for Level 2 (4x memory)",
+    "memory_monitor": "Quantifies tradeoff in MB",
+    "t_test": "Statistical significance for Level comparisons",
+    "risks_documented": true
+  },
+  "theoretical_basis": {
+    "e21_insight": "\u03c1_eff is a PHASE CLASSIFIER, not linear predictor",
+    "hypothesis": "Reducing \u03c1_eff via KV duplication shifts phase from GIBBERISH to STABLE",
+    "rho_eff_formula": "\u03c1_eff = KV_Ratio \u00d7 (H / d_head)"
+  },
+  "intervention_levels": {
+    "baseline": {
+      "kv_heads": 8,
+      "description": "Original GQA (4:1)",
+      "expected_rho_eff": 1.0,
+      "expected_phase": "GIBBERISH"
+    },
+    "level_1": {
+      "kv_heads": 16,
+      "description": "Reduced GQA (2:1)",
+      "expected_rho_eff": 0.5,
+      "expected_phase": "TRANSITION"
+    },
+    "level_2": {
+      "kv_heads": 32,
+      "description": "MHA Equivalent (1:1)",
+      "expected_rho_eff": 0.25,
+      "expected_phase": "STABLE"
+    }
+  },
+  "gene_kranz": {
+    "protocol_version": "v3",
+    "seed": 42,
+    "seed_idx": 0,
+    "all_seeds": [
+      42,
+      123,
+      456
+    ],
+    "deterministic": true,
+    "cudnn_benchmark": false
+  },
+  "test_prompts_md5": "9ff555afc37041ed0c3e376935744260",
+  "noise_levels": [
+    0.0,
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "max_new_tokens": 50,
+  "e06d_reference": {
+    "llama3_ppl_slope": 5612489,
+    "llama2_ppl_slope": 46
+  },
+  "memory_profile": {
+    "baseline": {
+      "before_mb": 15316.50830078125,
+      "after_model_mb": 15316.50830078125,
+      "overhead_mb": 0.0
+    },
+    "level_1": {
+      "before_mb": 15324.634765625,
+      "after_model_mb": 31153.14306640625,
+      "overhead_mb": 15828.50830078125
+    },
+    "level_2": {
+      "before_mb": 15324.634765625,
+      "after_model_mb": 32177.14306640625,
+      "overhead_mb": 16852.50830078125
+    }
+  },
+  "results": {
+    "baseline": {
+      "kv_heads": 8,
+      "kv_ratio": 4,
+      "rho_effective": 1.0,
+      "ppl_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 2.4207610845565797,
+          "std": 0.5482943093468198
+        },
+        {
+          "sigma": 0.01,
+          "mean": 16.298521423339842,
+          "std": 5.712480682904245
+        },
+        {
+          "sigma": 0.02,
+          "mean": 27265.937481689452,
+          "std": 32230.20997657616
+        },
+        {
+          "sigma": 0.05,
+          "mean": 26807.40986328125,
+          "std": 22086.779017808974
+        },
+        {
+          "sigma": 0.1,
+          "mean": 422128.890625,
+          "std": 170345.3054860851
+        },
+        {
+          "sigma": 0.2,
+          "mean": 1150694.725,
+          "std": 360500.9221439697
+        }
+      ],
+      "ppl_slope": {
+        "slope": 5917040.083451214,
+        "intercept": -103593.25824316381,
+        "r_squared": 0.953308083761594,
+        "p_value": 0.0008306199408447016
+      },
+      "baseline_ppl": 2.4207610845565797,
+      "failure_mode": "GIBBERISH",
+      "memory_overhead_mb": 0.0
+    },
+    "level_1": {
+      "kv_heads": 16,
+      "kv_ratio": 2,
+      "rho_effective": 0.5,
+      "ppl_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 120.41841201782226,
+          "std": 68.88474306833244
+        },
+        {
+          "sigma": 0.01,
+          "mean": 79781.07900390626,
+          "std": 45992.10614104409
+        },
+        {
+          "sigma": 0.02,
+          "mean": 685053.9640625,
+          "std": 575453.3036153758
+        },
+        {
+          "sigma": 0.05,
+          "mean": 135510.821875,
+          "std": 76689.55361920201
+        },
+        {
+          "sigma": 0.1,
+          "mean": 520658.440625,
+          "std": 135816.9377276352
+        },
+        {
+          "sigma": 0.2,
+          "mean": 890737.85,
+          "std": 265426.72299329384
+        }
+      ],
+      "ppl_slope": {
+        "slope": 3631447.541782449,
+        "intercept": 155318.7513501822,
+        "r_squared": 0.5714123709025009,
+        "p_value": 0.08209316863997086
+      },
+      "baseline_ppl": 120.41841201782226,
+      "failure_mode": "GIBBERISH",
+      "memory_overhead_mb": 15828.50830078125
+    },
+    "level_2": {
+      "kv_heads": 32,
+      "kv_ratio": 1,
+      "rho_effective": 0.25,
+      "ppl_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 52560.344960021976,
+          "std": 104670.41144323738
+        },
+        {
+          "sigma": 0.01,
+          "mean": 142116.67145996093,
+          "std": 168567.03313051336
+        },
+        {
+          "sigma": 0.02,
+          "mean": 271523.6551757812,
+          "std": 368934.62747201236
+        },
+        {
+          "sigma": 0.05,
+          "mean": 224211.309375,
+          "std": 167221.30934509754
+        },
+        {
+          "sigma": 0.1,
+          "mean": 480168.896875,
+          "std": 252216.3098977438
+        },
+        {
+          "sigma": 0.2,
+          "mean": 998422.05,
+          "std": 313855.6738277499
+        }
+      ],
+      "ppl_slope": {
+        "slope": 4437557.127101389,
+        "intercept": 80455.20325787266,
+        "r_squared": 0.9652429519245005,
+        "p_value": 0.00045837324148885136
+      },
+      "baseline_ppl": 52560.344960021976,
+      "failure_mode": "GIBBERISH",
+      "memory_overhead_mb": 16852.50830078125
+    }
+  },
+  "statistical_significance": {
+    "test": "independent t-test",
+    "comparison": "baseline vs level_2 at \u03c3=0.2",
+    "t_statistic": 0.6371488442932687,
+    "p_value": 0.5418276644706109,
+    "significant": false,
+    "alpha": 0.05
+  },
+  "verdict": {
+    "status": "CURE_FAILED",
+    "baseline_mode": "GIBBERISH",
+    "level2_mode": "GIBBERISH",
+    "baseline_slope": 5917040.083451214,
+    "level2_slope": 4437557.127101389,
+    "improvement_factor": 1.3334003177816491
+  }
+}

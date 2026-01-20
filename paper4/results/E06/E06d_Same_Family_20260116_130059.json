@@ -1,0 +1,311 @@
+{
+  "experiment": "E06d_Same_Family_MHA_vs_GQA",
+  "version": "1.1_RERUN_v3",
+  "timestamp": "20260116_130059",
+  "seed": 456,
+  "noise_levels": [
+    0.0,
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "test_prompts": [
+    "The meaning of life is",
+    "In the beginning, there was",
+    "The most important thing about",
+    "Scientists have discovered that",
+    "Once upon a time in a"
+  ],
+  "test_prompts_md5": "9ff555afc37041ed0c3e376935744260",
+  "metrics": [
+    "PPL-Slope",
+    "PIEV",
+    "Attention-Entropy"
+  ],
+  "purpose": "Same-family architectural comparison (reduced confound test)",
+  "hypothesis": "LLaMA-3 (GQA 4:1) >> LLaMA-2 (MHA 1:1) in fragility",
+  "confounds_controlled": [
+    "vendor",
+    "model_family",
+    "training_philosophy"
+  ],
+  "confounds_remaining": [
+    "generation (2 vs 3)",
+    "size (7B vs 8B)",
+    "tokenizer",
+    "pretraining_data (2T vs 15T)"
+  ],
+  "interpretation_note": "Not pure architecture isolate. If GQA still more fragile despite LLaMA-3 advantages, effect is strong.",
+  "reference": {
+    "e06b_llama2_ppl_slope": 73.35,
+    "e06b_mistral_ppl_slope": 427963,
+    "e06b_ratio": 5834
+  },
+  "models": {
+    "llama2_7b": {
+      "name": "meta-llama/Llama-2-7b-hf",
+      "vendor": "Meta",
+      "family": "LLaMA",
+      "generation": "2",
+      "architecture": "MHA",
+      "query_heads": 32,
+      "kv_heads": 32,
+      "kv_ratio": "1:1",
+      "size": "7B",
+      "expected": "BASELINE",
+      "reason": "Standard MHA architecture (no KV sharing) \u2014 BASELINE",
+      "ppl_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 2.3534327268600466,
+          "std": 0.34333713228013724
+        },
+        {
+          "sigma": 0.01,
+          "mean": 2.9185945987701416,
+          "std": 0.5307807953877394
+        },
+        {
+          "sigma": 0.02,
+          "mean": 21.453006172180174,
+          "std": 7.782449036591564
+        },
+        {
+          "sigma": 0.05,
+          "mean": 22.706625938415527,
+          "std": 22.006934091729438
+        },
+        {
+          "sigma": 0.1,
+          "mean": 9.360821437835693,
+          "std": 1.2915367620451836
+        },
+        {
+          "sigma": 0.2,
+          "mean": 18.547619819641113,
+          "std": 7.086245416172506
+        }
+      ],
+      "ppl_slope": {
+        "slope": 46.34713468189064,
+        "intercept": 9.954698252430708,
+        "r_squared": 0.14637301884083312,
+        "p_value": 0.45411932244642056
+      },
+      "baseline_ppl": 2.3534327268600466,
+      "entropy_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 4.907492446899414,
+          "piev": 0.0
+        },
+        {
+          "sigma": 0.01,
+          "mean": 4.297909951210022,
+          "piev": 0.12421465795113562
+        },
+        {
+          "sigma": 0.02,
+          "mean": 7.11175947189331,
+          "piev": 0.44916361030500757
+        },
+        {
+          "sigma": 0.05,
+          "mean": 6.933724689483642,
+          "piev": 0.4128854531124985
+        },
+        {
+          "sigma": 0.1,
+          "mean": 6.539914131164551,
+          "piev": 0.3326386544510143
+        },
+        {
+          "sigma": 0.2,
+          "mean": 7.284602928161621,
+          "piev": 0.48438393069032254
+        }
+      ],
+      "piev_slope": {
+        "slope": 0.9933907018923716,
+        "r_squared": 0.2883035158285072
+      },
+      "baseline_entropy": 4.907492446899414,
+      "max_piev": 0.48438393069032254,
+      "attn_entropy_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 0.27638597707264123
+        },
+        {
+          "sigma": 0.01,
+          "mean": 0.27638597707264123
+        },
+        {
+          "sigma": 0.02,
+          "mean": 0.27638597707264123
+        },
+        {
+          "sigma": 0.05,
+          "mean": 0.27638597707264123
+        },
+        {
+          "sigma": 0.1,
+          "mean": 0.27638597707264123
+        },
+        {
+          "sigma": 0.2,
+          "mean": 0.27638597707264123
+        }
+      ],
+      "attn_entropy_slope": {
+        "slope": 0.0,
+        "r_squared": 0.0
+      },
+      "baseline_attn_entropy": 0.27638597707264123,
+      "quadrant": "COMPLETE FRAGILITY"
+    },
+    "llama3_8b": {
+      "name": "meta-llama/Meta-Llama-3-8B",
+      "vendor": "Meta",
+      "family": "LLaMA",
+      "generation": "3",
+      "architecture": "GQA",
+      "query_heads": 32,
+      "kv_heads": 8,
+      "kv_ratio": "4:1",
+      "size": "8B",
+      "expected": "MORE_FRAGILE",
+      "reason": "GQA with 4:1 KV sharing \u2014 SAME FAMILY as LLaMA-2!",
+      "ppl_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 2.337029218673706,
+          "std": 0.47081090424178595
+        },
+        {
+          "sigma": 0.01,
+          "mean": 17.61568956375122,
+          "std": 6.673043893291001
+        },
+        {
+          "sigma": 0.02,
+          "mean": 22204.259912109374,
+          "std": 38156.57785431034
+        },
+        {
+          "sigma": 0.05,
+          "mean": 20883.54033203125,
+          "std": 17941.32495472333
+        },
+        {
+          "sigma": 0.1,
+          "mean": 456404.8375,
+          "std": 320763.33510542754
+        },
+        {
+          "sigma": 0.2,
+          "mean": 1074840.6125,
+          "std": 108568.67995258808
+        }
+      ],
+      "ppl_slope": {
+        "slope": 5612488.770763397,
+        "intercept": -93065.421654528,
+        "r_squared": 0.9579386157781236,
+        "p_value": 0.0006729631207165819
+      },
+      "baseline_ppl": 2.337029218673706,
+      "entropy_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 5.1713179588317875,
+          "piev": 0.0
+        },
+        {
+          "sigma": 0.01,
+          "mean": 6.333479022979736,
+          "piev": 0.2247320844318154
+        },
+        {
+          "sigma": 0.02,
+          "mean": 5.626630067825317,
+          "piev": 0.08804566120633317
+        },
+        {
+          "sigma": 0.05,
+          "mean": 7.832525444030762,
+          "piev": 0.5146091395625859
+        },
+        {
+          "sigma": 0.1,
+          "mean": 8.988735771179199,
+          "piev": 0.7381905043815513
+        },
+        {
+          "sigma": 0.2,
+          "mean": 9.093860054016114,
+          "piev": 0.7585188391839742
+        }
+      ],
+      "piev_slope": {
+        "slope": 3.2599583721097978,
+        "r_squared": 0.7060093269234694
+      },
+      "baseline_entropy": 5.1713179588317875,
+      "max_piev": 0.7585188391839742,
+      "attn_entropy_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 0.29046089816838505
+        },
+        {
+          "sigma": 0.01,
+          "mean": 0.29046089816838505
+        },
+        {
+          "sigma": 0.02,
+          "mean": 0.29046089816838505
+        },
+        {
+          "sigma": 0.05,
+          "mean": 0.29046089816838505
+        },
+        {
+          "sigma": 0.1,
+          "mean": 0.29046089816838505
+        },
+        {
+          "sigma": 0.2,
+          "mean": 0.29046089816838505
+        }
+      ],
+      "attn_entropy_slope": {
+        "slope": 0.0,
+        "r_squared": 0.0
+      },
+      "baseline_attn_entropy": 0.29046089816838505,
+      "quadrant": "COMPLETE FRAGILITY"
+    }
+  },
+  "same_family_analysis": {
+    "ppl_ratio": 121096.77996893263,
+    "piev_ratio": 1.5659455054649867,
+    "hypothesis_ppl_confirmed": true,
+    "hypothesis_piev_confirmed": true,
+    "vendor_confound_eliminated": true,
+    "family_confound_eliminated": true,
+    "generation_confound_present": true,
+    "size_confound_present": true,
+    "tokenizer_confound_present": true,
+    "is_pure_architecture_isolate": false
+  },
+  "verdict": "GQA_FRAGILITY_CONFIRMED_SAME_FAMILY",
+  "e06b_comparison": {
+    "e06b_ratio": 5834,
+    "e06d_ratio": 121096.77996893263,
+    "ratio_difference": 115262.77996893263,
+    "direction_consistent": true
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "experiment": "E04b-Heritage-Expansion",
+  "purpose": "Extend A3 claim to MHA + MQA architectures",
+  "timestamp": "20260112_210326",
+  "phase": "Phase 1 (Screening)",
+  "config": {
+    "seeds": [
+      42
+    ],
+    "noise_levels": [
+      0.0,
+      0.05,
+      0.1
+    ],
+    "prompts_subset": 5
+  },
+  "model_pairs": {
+    "LLaMA-2": {
+      "base": "meta-llama/Llama-2-7b-hf",
+      "instruct": "meta-llama/Llama-2-7b-chat-hf",
+      "expected_arch": "MHA"
+    },
+    "Falcon": {
+      "base": "tiiuae/falcon-7b",
+      "instruct": "tiiuae/falcon-7b-instruct",
+      "expected_arch": "MQA"
+    }
+  },
+  "results": {
+    "LLaMA-2": {
+      "family": "LLaMA-2",
+      "vendor": "Meta",
+      "expected_arch": "MHA",
+      "base_model": "meta-llama/Llama-2-7b-hf",
+      "instruct_model": "meta-llama/Llama-2-7b-chat-hf",
+      "base": {
+        "seed_results": {
+          "42": {
+            "early": {
+              "curve": [
+                [
+                  0.0,
+                  0.007874015748031496
+                ],
+                [
+                  0.05,
+                  0.4188976377952756
+                ],
+                [
+                  0.1,
+                  0.5228346456692914
+                ]
+              ],
+              "fragility": 5.149606299212601
+            },
+            "middle": {
+              "curve": [
+                [
+                  0.0,
+                  0.007874015748031496
+                ],
+                [
+                  0.05,
+                  0.007874015748031496
+                ],
+                [
+                  0.1,
+                  0.009448818897637795
+                ]
+              ],
+              "fragility": 0.01574803149606301
+            },
+            "late": {
+              "curve": [
+                [
+                  0.0,
+                  0.007874015748031496
+                ],
+                [
+                  0.05,
+                  0.004166666666666667
+                ],
+                [
+                  0.1,
+                  0.004166666666666667
+                ]
+              ],
+              "fragility": -0.03707349081364829
+            }
+          }
+        },
+        "early": {
+          "mean": 5.149606299212601,
+          "std": 0.0
+        },
+        "middle": {
+          "mean": 0.01574803149606301,
+          "std": 0.0
+        },
+        "late": {
+          "mean": -0.03707349081364829,
+          "std": 0.0
+        }
+      },
+      "instruct": {
+        "seed_results": {
+          "42": {
+            "early": {
+              "curve": [
+                [
+                  0.0,
+                  0.01956521739130435
+                ],
+                [
+                  0.05,
+                  0.41732283464566927
+                ],
+                [
+                  0.1,
+                  0.7396963123644251
+                ]
+              ],
+              "fragility": 7.2013109497312096
+            },
+            "middle": {
+              "curve": [
+                [
+                  0.0,
+                  0.01956521739130435
+                ],
+                [
+                  0.05,
+                  0.016835016835016835
+                ],
+                [
+                  0.1,
+                  0.024528301886792454
+                ]
+              ],
+              "fragility": 0.04963084495488108
+            },
+            "late": {
+              "curve": [
+                [
+                  0.0,
+                  0.01956521739130435
+                ],
+                [
+                  0.05,
+                  0.008281573498964804
+                ],
+                [
+                  0.1,
+                  0.013422818791946308
+                ]
+              ],
+              "fragility": -0.06142398599358036
+            }
+          }
+        },
+        "early": {
+          "mean": 7.2013109497312096,
+          "std": 0.0
+        },
+        "middle": {
+          "mean": 0.04963084495488108,
+          "std": 0.0
+        },
+        "late": {
+          "mean": -0.06142398599358036,
+          "std": 0.0
+        }
+      },
+      "status": "success",
+      "detected_arch": "MHA",
+      "model_config": {
+        "num_layers": 32,
+        "num_query_heads": 32,
+        "num_kv_heads": 32,
+        "d_head": 128,
+        "rho": 0.5,
+        "dtype": "torch.bfloat16"
+      },
+      "layer_ranges": {
+        "early": [
+          0,
+          10
+        ],
+        "middle": [
+          10,
+          20
+        ],
+        "late": [
+          20,
+          32
+        ]
+      },
+      "deltas": {
+        "early": {
+          "absolute": 2.0517046505186087,
+          "percent": 39.841971042180916,
+          "base_near_zero": false
+        },
+        "middle": {
+          "absolute": 0.033882813458818065,
+          "percent": 215.15586546349445,
+          "base_near_zero": false
+        },
+        "late": {
+          "absolute": -0.02435049517993207,
+          "percent": -65.68168965348049,
+          "base_near_zero": false
+        }
+      },
+      "verdict": "HERITAGE_DAMAGED",
+      "verdict_detail": "RLHF damages Early layers"
+    },
+    "Falcon": {
+      "family": "Falcon",
+      "vendor": "TII",
+      "expected_arch": "MQA",
+      "base_model": "tiiuae/falcon-7b",
+      "instruct_model": "tiiuae/falcon-7b-instruct",
+      "base": {
+        "seed_results": {}
+      },
+      "instruct": {
+        "seed_results": {}
+      },
+      "status": "error",
+      "detected_arch": "MHA",
+      "model_config": {
+        "num_layers": 32,
+        "num_query_heads": 71,
+        "num_kv_heads": 71,
+        "d_head": 64,
+        "rho": 1.0532687216470449,
+        "dtype": "torch.bfloat16"
+      },
+      "layer_ranges": {
+        "early": [
+          0,
+          10
+        ],
+        "middle": [
+          10,
+          20
+        ],
+        "late": [
+          20,
+          32
+        ]
+      },
+      "error": "'NoneType' object has no attribute 'shape'",
+      "traceback": "Traceback (most recent call last):\n  File \"/tmp/ipython-input-859537368.py\", line 91, in run_twin_test\n    result = compute_fragility_curve(\n             ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/ipython-input-303538628.py\", line 61, in compute_fragility_curve\n    rep_score = compute_repetition_score(model, tokenizer, prompts, max_length, use_chat_template)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/ipython-input-303538628.py\", line 24, in compute_repetition_score\n    outputs = model.generate(\n              ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py\", line 120, in decorate_context\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/transformers/generation/utils.py\", line 2564, in generate\n    result = decoding_method(\n             ^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/transformers/generation/utils.py\", line 2784, in _sample\n    outputs = self(**model_inputs, return_dict=True)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/.cache/huggingface/modules/transformers_modules/tiiuae/falcon_hyphen_7b/ec89142b67d748a1865ea4451372db8313ada0d8/modeling_falcon.py\", line 900, in forward\n    transformer_outputs = self.transformer(\n                          ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/.cache/huggingface/modules/transformers_modules/tiiuae/falcon_hyphen_7b/ec89142b67d748a1865ea4451372db8313ada0d8/modeling_falcon.py\", line 734, in forward\n    past_key_values = self._convert_to_rw_cache(past_key_values)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/.cache/huggingface/modules/transformers_modules/tiiuae/falcon_hyphen_7b/ec89142b67d748a1865ea4451372db8313ada0d8/modeling_falcon.py\", line 622, in _convert_to_rw_cache\n    batch_size, num_heads, kv_length, head_dim = past_key_value[0][0].shape\n                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'shape'\n"
+    }
+  },
+  "summary": {
+    "total_tested": 2,
+    "successful": 1,
+    "a3_pattern_found": 1,
+    "architectures_tested": [
+      "MHA"
+    ],
+    "conclusion": "A3 extended"
+  },
+  "prior_gqa_reference": {
+    "Gemma-27B": {
+      "early_delta": "+150%",
+      "source": "E11-Indra"
+    },
+    "LLaMA-3.1-8B": {
+      "early_delta": "+51%",
+      "source": "E04-LLaMA31"
+    },
+    "Qwen2-7B": {
+      "early_delta": "+117%",
+      "source": "E04-Qwen"
+    }
+  }
+}

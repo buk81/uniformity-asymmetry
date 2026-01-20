@@ -1,0 +1,128 @@
+{
+  "experiment": "E-ISO-3",
+  "name": "Wo_Decompression_3seed",
+  "version": "2.0",
+  "timestamp": "20260117_224257",
+  "gene_kranz": {
+    "protocol_version": "v3",
+    "seeds": [
+      42,
+      123,
+      456
+    ],
+    "deterministic": true,
+    "3_seed_compliant": true
+  },
+  "hypothesis": {
+    "name": "H3_ISO: Complementary Decompression",
+    "description": "Qwen2's W_o shows expansion structure complementary to KV compression"
+  },
+  "results": {
+    "qwen2_7b": {
+      "model": "Qwen2-7B",
+      "kv_ratio": "7:1",
+      "seeds": [
+        42,
+        123,
+        456
+      ],
+      "per_seed": [
+        {
+          "seed": 42,
+          "W_o_normalized_rank": 0.7301317970974263,
+          "W_o_top5_energy": 0.021372952150534804,
+          "W_k_normalized_rank": 0.8709937105057488,
+          "W_k_top5_energy": 0.04647480086178928,
+          "expansion_ratio": 0.8382744769459586
+        },
+        {
+          "seed": 123,
+          "W_o_normalized_rank": 0.7301317970974263,
+          "W_o_top5_energy": 0.021372952150534804,
+          "W_k_normalized_rank": 0.8709937105057488,
+          "W_k_top5_energy": 0.04647480086178928,
+          "expansion_ratio": 0.8382744769459586
+        },
+        {
+          "seed": 456,
+          "W_o_normalized_rank": 0.7301317970974263,
+          "W_o_top5_energy": 0.021372952150534804,
+          "W_k_normalized_rank": 0.8709937105057488,
+          "W_k_top5_energy": 0.04647480086178928,
+          "expansion_ratio": 0.8382744769459586
+        }
+      ],
+      "W_o_normalized_rank": {
+        "mean": 0.7301317970974263,
+        "std": 0.0
+      },
+      "W_o_top5_energy": {
+        "mean": 0.021372952150534804,
+        "std": 0.0
+      },
+      "expansion_ratio": {
+        "mean": 0.8382744769459586,
+        "std": 0.0
+      }
+    },
+    "llama3_8b": {
+      "model": "LLaMA-3-8B",
+      "kv_ratio": "4:1",
+      "seeds": [
+        42,
+        123,
+        456
+      ],
+      "per_seed": [
+        {
+          "seed": 42,
+          "W_o_normalized_rank": 0.7234548744772096,
+          "W_o_top5_energy": 0.019250242867049565,
+          "W_k_normalized_rank": 0.8257873134752326,
+          "W_k_top5_energy": 0.05607262119361266,
+          "expansion_ratio": 0.8760789402692947
+        },
+        {
+          "seed": 123,
+          "W_o_normalized_rank": 0.7234548744772096,
+          "W_o_top5_energy": 0.019250242867049565,
+          "W_k_normalized_rank": 0.8257873134752326,
+          "W_k_top5_energy": 0.05607262119361266,
+          "expansion_ratio": 0.8760789402692947
+        },
+        {
+          "seed": 456,
+          "W_o_normalized_rank": 0.7234548744772096,
+          "W_o_top5_energy": 0.019250242867049565,
+          "W_k_normalized_rank": 0.8257873134752326,
+          "W_k_top5_energy": 0.05607262119361266,
+          "expansion_ratio": 0.8760789402692947
+        }
+      ],
+      "W_o_normalized_rank": {
+        "mean": 0.7234548744772096,
+        "std": 0.0
+      },
+      "W_o_top5_energy": {
+        "mean": 0.019250242867049565,
+        "std": 0.0
+      },
+      "expansion_ratio": {
+        "mean": 0.8760789402692947,
+        "std": 0.0
+      }
+    }
+  },
+  "analysis": {
+    "qwen_rank_mean": 0.7301317970974263,
+    "llama_rank_mean": 0.7234548744772096,
+    "qwen_expansion_mean": 0.8382744769459586,
+    "llama_expansion_mean": 0.8760789402692947,
+    "qwen_higher_rank": 1.0,
+    "qwen_more_distributed": 0.0,
+    "qwen_more_expansion": 0.0,
+    "criteria_met": 1.0,
+    "seed_consistency": 1.0,
+    "verdict": "H3_ISO_PARTIAL_3SEED"
+  }
+}

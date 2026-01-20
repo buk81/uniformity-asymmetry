@@ -1,0 +1,291 @@
+{
+  "experiment": "E06_Alternative_Metrics_Triangle",
+  "version": "2.0_RERUN_v3",
+  "timestamp": "20260116_113633",
+  "seed": 456,
+  "noise_levels": [
+    0.0,
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "test_prompts": [
+    "The meaning of life is",
+    "In the beginning, there was",
+    "The most important thing about",
+    "Scientists have discovered that",
+    "Once upon a time in a"
+  ],
+  "test_prompts_md5": "9ff555afc37041ed0c3e376935744260",
+  "metrics": [
+    "PPL-Slope",
+    "PIEV",
+    "Attention-Entropy"
+  ],
+  "models": {
+    "pythia_70m": {
+      "name": "EleutherAI/pythia-70m",
+      "expected": "FRAGILE",
+      "reason": "Small model, no architectural robustness",
+      "ppl_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 3.740621566772461,
+          "std": 0.8171452210652428
+        },
+        {
+          "sigma": 0.01,
+          "mean": 3.2341533660888673,
+          "std": 0.6522770885951262
+        },
+        {
+          "sigma": 0.02,
+          "mean": 3.7709157466888428,
+          "std": 1.1918829618357323
+        },
+        {
+          "sigma": 0.05,
+          "mean": 8.875102043151855,
+          "std": 4.024674926626583
+        },
+        {
+          "sigma": 0.1,
+          "mean": 189.94781341552735,
+          "std": 73.43280027574039
+        },
+        {
+          "sigma": 0.2,
+          "mean": 8917.451708984376,
+          "std": 4128.804675907719
+        }
+      ],
+      "ppl_slope": {
+        "slope": 42338.433806385314,
+        "intercept": -1160.2640885506357,
+        "r_squared": 0.7897299256686772,
+        "p_value": 0.01790240928967812
+      },
+      "baseline_ppl": 3.740621566772461,
+      "entropy_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 5.3485026359558105,
+          "piev": 0.0
+        },
+        {
+          "sigma": 0.01,
+          "mean": 5.282094812393188,
+          "piev": 0.012416152348171169
+        },
+        {
+          "sigma": 0.02,
+          "mean": 5.249599170684815,
+          "piev": 0.018491804529759057
+        },
+        {
+          "sigma": 0.05,
+          "mean": 5.231767559051514,
+          "piev": 0.021825749158191306
+        },
+        {
+          "sigma": 0.1,
+          "mean": 5.3485454559326175,
+          "piev": 8.005974703860962e-06
+        },
+        {
+          "sigma": 0.2,
+          "mean": 4.22695026397705,
+          "piev": 0.20969464695390055
+        }
+      ],
+      "piev_slope": {
+        "slope": 0.9776057951458451,
+        "r_squared": 0.7395568324679758
+      },
+      "baseline_entropy": 5.3485026359558105,
+      "max_piev": 0.20969464695390055,
+      "attn_entropy_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 0.4758386065562566
+        },
+        {
+          "sigma": 0.01,
+          "mean": 0.4758386065562566
+        },
+        {
+          "sigma": 0.02,
+          "mean": 0.4758386065562566
+        },
+        {
+          "sigma": 0.05,
+          "mean": 0.4758386065562566
+        },
+        {
+          "sigma": 0.1,
+          "mean": 0.4758386065562566
+        },
+        {
+          "sigma": 0.2,
+          "mean": 0.4758386065562566
+        }
+      ],
+      "attn_entropy_slope": {
+        "slope": 0.0,
+        "r_squared": NaN
+      },
+      "baseline_attn_entropy": 0.4758386065562566,
+      "quadrant": "CONSISTENT DEGRADATION"
+    },
+    "mistral_instruct": {
+      "name": "mistralai/Mistral-7B-Instruct-v0.2",
+      "expected": "ROBUST",
+      "reason": "GQA + SWA architecture",
+      "ppl_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 2.1277052402496337,
+          "std": 0.269493671824832
+        },
+        {
+          "sigma": 0.01,
+          "mean": 4995.6580078125,
+          "std": 2576.638258678857
+        },
+        {
+          "sigma": 0.02,
+          "mean": 430.33756256103516,
+          "std": 593.9521770083702
+        },
+        {
+          "sigma": 0.05,
+          "mean": 11437.30849609375,
+          "std": 3774.030807694649
+        },
+        {
+          "sigma": 0.1,
+          "mean": 56601.20625,
+          "std": 6416.3891602178655
+        },
+        {
+          "sigma": 0.2,
+          "mean": 83400.69765625,
+          "std": 16067.174749974352
+        }
+      ],
+      "ppl_slope": {
+        "slope": 450544.61933571624,
+        "intercept": -2389.9366116024394,
+        "r_squared": 0.9451393701322857,
+        "p_value": 0.0011499336170061334
+      },
+      "baseline_ppl": 2.1277052402496337,
+      "entropy_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 3.757729959487915,
+          "piev": 0.0
+        },
+        {
+          "sigma": 0.01,
+          "mean": 4.650949192047119,
+          "piev": 0.23770181524191472
+        },
+        {
+          "sigma": 0.02,
+          "mean": 6.601121807098389,
+          "piev": 0.7566780684788635
+        },
+        {
+          "sigma": 0.05,
+          "mean": 9.12551040649414,
+          "piev": 1.4284635950098232
+        },
+        {
+          "sigma": 0.1,
+          "mean": 9.406802749633789,
+          "piev": 1.5033205821196638
+        },
+        {
+          "sigma": 0.2,
+          "mean": 9.36377239227295,
+          "piev": 1.491869424685588
+        }
+      ],
+      "piev_slope": {
+        "slope": 5.218455950283859,
+        "r_squared": 0.511479281859405
+      },
+      "baseline_entropy": 3.757729959487915,
+      "max_piev": 1.5033205821196638,
+      "attn_entropy_curve": [
+        {
+          "sigma": 0.0,
+          "mean": 0.3226804597303271
+        },
+        {
+          "sigma": 0.01,
+          "mean": 0.3226804597303271
+        },
+        {
+          "sigma": 0.02,
+          "mean": 0.3226804597303271
+        },
+        {
+          "sigma": 0.05,
+          "mean": 0.3226804597303271
+        },
+        {
+          "sigma": 0.1,
+          "mean": 0.3226804597303271
+        },
+        {
+          "sigma": 0.2,
+          "mean": 0.3226804597303271
+        }
+      ],
+      "attn_entropy_slope": {
+        "slope": 0.0,
+        "r_squared": 0.0
+      },
+      "baseline_attn_entropy": 0.3226804597303271,
+      "quadrant": "COMPLETE FRAGILITY"
+    }
+  },
+  "validation": {
+    "criteria": [
+      {
+        "name": "C1: PPL no floor",
+        "pass": true,
+        "value": 2.1277052402496337
+      },
+      {
+        "name": "C2: Entropy no floor",
+        "pass": true,
+        "value": 3.757729959487915
+      },
+      {
+        "name": "C3: PPL-Slope diff",
+        "pass": false,
+        "pythia": 42338.433806385314,
+        "mistral": 450544.61933571624
+      },
+      {
+        "name": "C4: PIEV diff",
+        "pass": false,
+        "pythia": 0.20969464695390055,
+        "mistral": 1.5033205821196638
+      },
+      {
+        "name": "C5: AttnH diff",
+        "pass": false,
+        "pythia": 0.0,
+        "mistral": 0.0
+      }
+    ],
+    "all_pass": false,
+    "pass_count": 2
+  }
+}

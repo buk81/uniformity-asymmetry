@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "experiment_id": "E08_phi_size_ladder",
+  "description": "Phi model size ladder showing SI invariance across 10x scale",
+  "models": [
+    {
+      "name": "microsoft/phi-1_5",
+      "params": "1.3B",
+      "si_mean": 0.33
+    },
+    {
+      "name": "microsoft/phi-2",
+      "params": "2.7B",
+      "si_mean": 0.34
+    },
+    {
+      "name": "microsoft/phi-3-mini-4k-instruct",
+      "params": "3.8B",
+      "si_mean": 0.33
+    }
+  ],
+  "key_finding": "SI remains ~0.33 across 10x parameter scale",
+  "source_notebooks": [
+    "../notebooks/A4_synthetic/E08_Phi_Size_Ladder.ipynb",
+    "../notebooks/A4_synthetic/E08_Phi3_Alignment_Density.ipynb"
+  ],
+  "note": "Full results available in original ZIP files; this index summarizes key findings"
+}

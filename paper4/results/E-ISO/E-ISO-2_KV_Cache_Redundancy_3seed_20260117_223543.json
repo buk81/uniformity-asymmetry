@@ -1,0 +1,131 @@
+{
+  "experiment": "E-ISO-2",
+  "name": "KV_Cache_Redundancy_3seed",
+  "version": "2.0",
+  "timestamp": "20260117_223543",
+  "gene_kranz": {
+    "protocol_version": "v3",
+    "seeds": [
+      42,
+      123,
+      456
+    ],
+    "deterministic": true,
+    "3_seed_compliant": true
+  },
+  "prompts": {
+    "count": 8,
+    "md5": "6b2135c470d38a02344c9a6d6b48ef93"
+  },
+  "results": {
+    "qwen2_7b": {
+      "model": "Qwen2-7B",
+      "kv_ratio": "7:1",
+      "seeds": [
+        42,
+        123,
+        456
+      ],
+      "per_seed": [
+        {
+          "seed": 42,
+          "k_head_redundancy": 0.011658307963183947,
+          "k_temporal_redundancy": 0.8235539027622768,
+          "k_normalized_rank": 0.5461852759011713,
+          "k_spectral_decay": 0.0969797591773831,
+          "k_top5_energy_ratio": 0.7371924247353674,
+          "composite_redundancy": 0.38787391124360526
+        },
+        {
+          "seed": 123,
+          "k_head_redundancy": 0.011658307963183947,
+          "k_temporal_redundancy": 0.8235539027622768,
+          "k_normalized_rank": 0.5461852759011713,
+          "k_spectral_decay": 0.0969797591773831,
+          "k_top5_energy_ratio": 0.7371924247353674,
+          "composite_redundancy": 0.38787391124360526
+        },
+        {
+          "seed": 456,
+          "k_head_redundancy": 0.011658307963183947,
+          "k_temporal_redundancy": 0.8235539027622768,
+          "k_normalized_rank": 0.5461852759011713,
+          "k_spectral_decay": 0.0969797591773831,
+          "k_top5_energy_ratio": 0.7371924247353674,
+          "composite_redundancy": 0.38787391124360526
+        }
+      ],
+      "composite_redundancy": {
+        "mean": 0.3878739112436052,
+        "std": 5.551115123125783e-17
+      },
+      "k_top5_energy_ratio": {
+        "mean": 0.7371924247353675,
+        "std": 1.1102230246251565e-16
+      },
+      "k_spectral_decay": {
+        "mean": 0.0969797591773831,
+        "std": 0.0
+      }
+    },
+    "llama3_8b": {
+      "model": "LLaMA-3-8B",
+      "kv_ratio": "4:1",
+      "seeds": [
+        42,
+        123,
+        456
+      ],
+      "per_seed": [
+        {
+          "seed": 42,
+          "k_head_redundancy": -0.007839993573725224,
+          "k_temporal_redundancy": 0.8044452667236328,
+          "k_normalized_rank": 0.7028518586728506,
+          "k_spectral_decay": 0.08701677934119577,
+          "k_top5_energy_ratio": 0.499784209088332,
+          "composite_redundancy": 0.32734202498574455
+        },
+        {
+          "seed": 123,
+          "k_head_redundancy": -0.007839993573725224,
+          "k_temporal_redundancy": 0.8044452667236328,
+          "k_normalized_rank": 0.7028518586728506,
+          "k_spectral_decay": 0.08701677934119577,
+          "k_top5_energy_ratio": 0.499784209088332,
+          "composite_redundancy": 0.32734202498574455
+        },
+        {
+          "seed": 456,
+          "k_head_redundancy": -0.007839993573725224,
+          "k_temporal_redundancy": 0.8044452667236328,
+          "k_normalized_rank": 0.7028518586728506,
+          "k_spectral_decay": 0.08701677934119577,
+          "k_top5_energy_ratio": 0.499784209088332,
+          "composite_redundancy": 0.32734202498574455
+        }
+      ],
+      "composite_redundancy": {
+        "mean": 0.32734202498574455,
+        "std": 0.0
+      },
+      "k_top5_energy_ratio": {
+        "mean": 0.499784209088332,
+        "std": 0.0
+      },
+      "k_spectral_decay": {
+        "mean": 0.08701677934119577,
+        "std": 0.0
+      }
+    }
+  },
+  "analysis": {
+    "qwen_composite_mean": 0.3878739112436052,
+    "llama_composite_mean": 0.32734202498574455,
+    "composite_ratio": 1.1849193859557041,
+    "qwen_top5_energy": 0.7371924247353675,
+    "llama_top5_energy": 0.499784209088332,
+    "seed_consistency": 1.0,
+    "verdict": "H2_INCONCLUSIVE_3SEED"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Paper 4 Result Schema v1",
+  "description": "JSON schema for Paper 4 experiment results. All result files should conform to this schema.",
+  "type": "object",
+  "required": ["experiment_id", "model", "timestamp", "metrics"],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1,
+      "description": "Schema version number"
+    },
+    "experiment_id": {
+      "type": "string",
+      "pattern": "^E[0-9]+.*$",
+      "description": "Experiment identifier (e.g., E11_territorial_collapse)"
+    },
+    "model": {
+      "type": "string",
+      "description": "HuggingFace model ID or model name"
+    },
+    "model_revision": {
+      "type": "string",
+      "description": "Git revision or version of the model"
+    },
+    "architecture": {
+      "type": "string",
+      "enum": ["MHA", "GQA", "MQA"],
+      "description": "Attention architecture type"
+    },
+    "dtype": {
+      "type": "string",
+      "enum": ["bfloat16", "float16", "float32", "int8"],
+      "description": "Data type used for computation"
+    },
+    "seeds": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "minItems": 1,
+      "description": "Random seeds used for reproducibility"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of experiment execution"
+    },
+    "prompt_hash": {
+      "type": "string",
+      "description": "SHA256 hash of the prompts file used"
+    },
+    "max_length": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Maximum sequence length for generation"
+    },
+    "metrics": {
+      "type": "object",
+      "description": "Experiment-specific metrics",
+      "additionalProperties": true
+    },
+    "hardware": {
+      "type": "string",
+      "description": "Hardware used (e.g., 'A100-80GB', 'RTX 4090')"
+    },
+    "git_commit": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{7,40}$",
+      "description": "Git commit hash of the codebase"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the experiment"
+    }
+  },
+  "additionalProperties": true
+}

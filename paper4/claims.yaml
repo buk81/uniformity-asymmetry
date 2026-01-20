@@ -1,0 +1,166 @@
+# Paper 4: Alignment Robustness — Machine-Readable Claim Mapping
+# Schema version: 1
+# Created: 2026-01-20
+#
+# Naming Convention:
+#   A# = Claims (narrative units)
+#   E## = Experiments (measurement protocols)
+#   Artifacts = Notebooks (.ipynb) + Results (.json)
+
+schema_version: 1
+
+claims:
+  A1:
+    name: "Territorial Collapse"
+    tier: A
+    description: "SI changes under alignment vary by architecture"
+    experiments: [E11]
+    key_metric: "ΔSI (delta Specialization Index)"
+    expected_range: "ΔSI: -40% to +5%"
+    notebooks:
+      - notebooks/A1_territorial/E11_Territorial_Collapse.ipynb
+      - notebooks/A1_territorial/E11_LLaMA2_Territorial_Collapse.ipynb
+      - notebooks/A1_territorial/E11_Yi15_Territorial_Collapse.ipynb
+      - notebooks/A1_territorial/E11_T_GQA_Comparison.ipynb
+      - notebooks/A1_territorial/E11_Gemma2_Territorial_Collapse.ipynb
+      - notebooks/A1_territorial/E11_Falcon_Territorial_Collapse.ipynb
+    results:
+      - results/E11/E11_territorial_collapse_mistral_20260113_182026.json
+      - results/E11/E11_llama2_territorial_20260113_201152.json
+      - results/E11/E11_yi15_territorial_20260113_201056.json
+      - results/E11/E11T_gqa_comparison_20260113_181926.json
+      - results/E11/E11_gemma2_territorial_20260113_195146.json
+      - results/E11/E11_falcon_territorial_collapse_20260113_195443.json
+    canonical_result: results/E11/E11_territorial_collapse_mistral_20260113_182026.json
+
+  A2:
+    name: "Indra State-Dependency"
+    tier: A
+    description: "Attention perturbation acts as medicine/vitamin/poison depending on model state"
+    experiments: [E11T]
+    key_metric: "Healing% (+114% MHA), Damage% (-7.8% Base)"
+    expected_range: "Healing: +80% to +140%, Damage: -10% to -5%"
+    notebooks:
+      - notebooks/A2_indra/E11_T_Indra_Specialization_Recovery.ipynb
+      - notebooks/A2_indra/E11_T_Indra_B_Base_Control.ipynb
+      - notebooks/A2_indra/E11_T_Indra_LLaMA2_MHA.ipynb
+      - notebooks/A2_indra/E11_Gemma2_Indra_Recovery.ipynb
+      - notebooks/A2_indra/E11_Indra_Gemma27B_V3.ipynb
+      - notebooks/A2_indra/E11_Indra_Gemma27B_V4_Dual.ipynb
+    results:
+      - results/E11/E11T_indra_recovery_20260113_184010.json
+      - results/E11/E11T_indra_B_base_control_20260113_184219.json
+      - results/E11/E11T_indra_llama2_v3_20260113_131246.json
+      - results/E11/E11_indra_gemma_20260113_202833.json
+      - results/E11/E11_indra_gemma27b_v3_20260113_211454.json
+      - results/E11/E11_indra_gemma27b_v4_fp_20260113_222257.json
+    canonical_result: results/E11/E11T_indra_recovery_20260113_184010.json
+
+  A3:
+    name: "Heritage > Scale"
+    tier: A
+    description: "RLHF fragility is architecture-dependent, not scale-dependent"
+    experiments: [E04]
+    key_metric: "Early-layer fragility pattern"
+    expected_range: "Pattern consistent across model families"
+    notebooks:
+      - notebooks/A3_heritage/E04_Qwen_Twin.ipynb
+      - notebooks/A3_heritage/E04_LLaMA31_Twin_Test.ipynb
+      - notebooks/A3_heritage/E04b_Heritage_Expansion.ipynb
+    results:
+      - results/E04/E04_qwen_twin_20260113_202833.json
+      - results/E04/E04_LLaMA31_Twin_Test_20260113_210429.json
+      - results/E04/E04b_heritage_expansion_20260112_210326.json
+    canonical_result: results/E04/E04b_heritage_expansion_20260112_210326.json
+
+  A4:
+    name: "Synthetic Immunity"
+    tier: A
+    description: "Phi models show SI ≈ 0.33 invariant across 10× scale"
+    experiments: [E08]
+    key_metric: "SI ≈ 0.33 across Phi-1.5/2/3"
+    expected_range: "SI: 0.30 to 0.36"
+    notebooks:
+      - notebooks/A4_synthetic/E08_Phi_Size_Ladder.ipynb
+      - notebooks/A4_synthetic/E08_Phi3_Alignment_Density.ipynb
+      - notebooks/A4_synthetic/E11_T_Phi3_Indra.ipynb
+    results:
+      - results/E08/E08_phi_size_ladder_index.json
+      - results/E08/E08_phi3_index.json
+    canonical_result: results/E08/E08_phi_size_ladder_index.json
+
+  A5:
+    name: "MQA Pre-Collapsed"
+    tier: A
+    description: "Falcon MQA shows SI ≈ 0.14 scale-invariant (7B and 40B)"
+    experiments: [E11]
+    key_metric: "SI ≈ 0.14 (7B and 40B)"
+    expected_range: "SI: 0.12 to 0.16"
+    notebooks:
+      - notebooks/A5_mqa/E11_Falcon40B_MQA_Validation.ipynb
+    results:
+      - results/E11/E11_falcon40b_mqa_validation_20260113_170730.json
+    canonical_result: results/E11/E11_falcon40b_mqa_validation_20260113_170730.json
+
+supporting_evidence:
+  E06_Triangle:
+    tier: B
+    description: "GQA Noise Amplification"
+    results:
+      - results/E06/E06_Triangle_20260116_113633.json
+    key_finding: "PPL-slope divergence between architectures"
+
+  E06b_Same_Scale:
+    tier: B
+    description: "Same-scale PPL comparison"
+    results:
+      - results/E06/E06b_Same_Scale_20260116_120105.json
+    key_finding: "PPL-Ratio ~5,800×"
+
+  E06d_Same_Family:
+    tier: B
+    description: "Same-family PPL comparison"
+    results:
+      - results/E06/E06d_Same_Family_20260116_130059.json
+    key_finding: "PPL-Ratio ~180,000×"
+
+  E21_Dimensional_Crowding:
+    tier: B
+    description: "Dimensional crowding analysis"
+    results:
+      - results/E21_E22/E21_Dimensional_Crowding_20260116_222742.json
+    key_finding: "65,799× GQA/MHA ratio"
+
+  E22_Indra_Cure_v2:
+    tier: B
+    description: "Cure validation experiment"
+    results:
+      - results/E21_E22/E22_Indra_Cure_v2_20260116_231418.json
+    key_finding: "Validation of Indra cure mechanism"
+
+  E-ISO-2_KV_Cache:
+    tier: B
+    description: "KV Cache Redundancy (3-seed)"
+    results:
+      - results/E-ISO/E-ISO-2_KV_Cache_Redundancy_3seed_20260117_223543.json
+    key_finding: "KV cache redundancy isomorphism"
+
+  E-ISO-3_Wo_Decompression:
+    tier: B
+    description: "Wo Decompression (3-seed)"
+    results:
+      - results/E-ISO/E-ISO-3_Wo_Decompression_3seed_20260117_224257.json
+    key_finding: "Wo decompression isomorphism"
+
+  E11T_v3_Bootstrap_CI:
+    tier: B
+    description: "Statistical validation with bootstrap CI"
+    results:
+      - results/E11/E11T_v3_bootstrap_ci.json
+    key_finding: "All A-tier p < 0.01"
+
+metadata:
+  created: "2026-01-20"
+  author: "Davide D'Elia"
+  repository: "https://github.com/buk81/uniformity-asymmetry"
+  paper_version: "4.0"
