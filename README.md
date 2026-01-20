@@ -258,7 +258,7 @@ All papers are timestamped on the Bitcoin blockchain via [OpenTimestamps](https:
 | 1 | `timestamps/paper1_20251231.tar.gz.ots` | 2025-12-31 |
 | 2 | `timestamps/paper2_20260104.zip.ots` | 2026-01-04 |
 | 3 | `timestamps/paper3_sheaf_theory_20260104.tar.gz.ots` | 2026-01-04 |
-| 4 | *TBD after acceptance* | 2026-01-20 |
+| 4 | `timestamps/paper4_github_release_v4.0_20260120.zip.ots` | 2026-01-20 |
 
 **Verify:**
 ```bash
