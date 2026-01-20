@@ -3,7 +3,7 @@
 [![DOI Paper 1](https://zenodo.org/badge/DOI/10.5281/zenodo.18110161.svg)](https://doi.org/10.5281/zenodo.18110161)
 [![DOI Paper 2](https://zenodo.org/badge/DOI/10.5281/zenodo.18142454.svg)](https://doi.org/10.5281/zenodo.18142454)
 [![DOI Paper 3](https://zenodo.org/badge/DOI/10.5281/zenodo.18165365.svg)](https://doi.org/10.5281/zenodo.18165365)
-![Paper 4](https://img.shields.io/badge/Paper%204-Zenodo%20Preprint-yellow)
+[![DOI Paper 4](https://zenodo.org/badge/DOI/10.5281/zenodo.18316488.svg)](https://doi.org/10.5281/zenodo.18316488)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buk81/uniformity-asymmetry/blob/main/notebooks/Uniformity_Asymmetry_Validation.ipynb)
 
 **Author:** Davide D'Elia
@@ -18,7 +18,7 @@
 | 1 | **Uniformity Asymmetry:** An Exploratory Metric for Detecting Representational Preferences in LLM Embeddings | [DOI: 10.5281/zenodo.18110161](https://doi.org/10.5281/zenodo.18110161) | 2025-12-31 |
 | 2 | **Layer-wise Embedding-Output Dynamics Across LLM Families:** Evidence for Phase-Structured Decision Commitment | [DOI: 10.5281/zenodo.18142454](https://doi.org/10.5281/zenodo.18142454) | 2026-01-04 |
 | 3 | **Thermodynamic Constraints in Transformer Architectures:** A Sheaf-Theoretic Perspective | [DOI: 10.5281/zenodo.18165365](https://doi.org/10.5281/zenodo.18165365) | 2026-01-06 |
-| 4 | **Alignment Robustness Depends More on Training than Architecture:** A Cross-Vendor Analysis of Attention Specialization in Large Language Models | Zenodo Preprint (DOI TBD) | 2026-01-20 |
+| 4 | **Alignment Robustness Depends More on Training than Architecture:** A Cross-Vendor Analysis of Attention Specialization in Large Language Models | [DOI: 10.5281/zenodo.18316488](https://doi.org/10.5281/zenodo.18316488) | 2026-01-20 |
 
 **Series Arc:**
 - Paper 1 → Empirical observation (uniformity asymmetry)
@@ -207,7 +207,7 @@ python reproduce.py --experiment E11 --model mistral --seed 42
                A Cross-Vendor Analysis of Attention Specialization in Large Language Models},
   journal   = {Zenodo preprint},
   year      = {2026},
-  doi       = {10.5281/zenodo.XXXXXXXX}
+  doi       = {10.5281/zenodo.18316488}
 }
 ```
 
